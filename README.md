@@ -1,2 +1,2 @@
-# AmpliConnect
+# AmpConnect
 A connected dac 
