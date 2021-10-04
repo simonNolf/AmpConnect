@@ -1,12 +1,22 @@
-<!-- The sidebar -->
-<div class="sidebar">
-  <a class="active" href="/">Accueil</a>
-  <a href="/settings">Settings</a>
-  <a href="/connection">Connection</a>
-  <a href="/help">Help</a>
-</div>
-
-<!-- Page content -->
-<div class="content">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <span class="navbar-brand">Ampconnect</span>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/">Accueil</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/settings">Settings</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/connection">Connection</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/help">Help</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div>
   <router-outlet></router-outlet>
 </div>
