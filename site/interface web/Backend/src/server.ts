@@ -1,18 +1,22 @@
 import express from "express";
 import path from "path";
 import morganMiddleware from "./config/morganMiddleware";
+import Logger from "./lib/logger";
 
 const app = express();
 const port = 8080; // default port to listen
 app.use(morganMiddleware)
 // define a route handler for the default home page
-app.get( "/index", ( req, res ) => {
-    res.sendFile(path.join(__dirname,"../../frontendInterface/dist/frontendInterface/index.html") )
-    res.send( path.join(__dirname,"../../frontendInterface/dist/frontendInterface/index.html"));
+app.use("/",express.static(path.join(__dirname,"../../frontendInterfaceWeb/dist/frontendInterfaceWeb")))
+app.get( "/index", ( req:express.Request, res:express.Response ) => {
+    res.sendFile(path.join(__dirname,"../../frontendInterfaceWeb/dist/frontendInterfaceWeb/index.html"))
+
 });
-app.use("/static",express.static("../../frontendInterface/dist/frontendInterface"))
+app.get("/api",(req:express.Request,res:express.Response ) =>{
+    Logger.debug("api")
+    res.sendStatus(200);
+})
 // start the Express server
 app.listen( port, () => {
-    // tslint:disable-next-line:no-console
-    console.log( `server started at http://localhost:${ port }` );
+    Logger.info( `server started at http://localhost:${ port }` );
 } );
