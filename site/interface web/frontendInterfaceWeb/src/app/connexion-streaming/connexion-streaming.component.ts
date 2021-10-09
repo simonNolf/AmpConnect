@@ -13,4 +13,7 @@ export class ConnexionStreamingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
+
 }

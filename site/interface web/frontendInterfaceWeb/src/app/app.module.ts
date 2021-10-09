@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SettingsMenuComponent } from './settings-menu/settings-menu.component';
 import { ConnexionStreamingComponent } from './connexion-streaming/connexion-streaming.component';
 import { HelpComponent } from './help/help.component';
-
+import { FormsModule }   from '@angular/forms';
 import { Routes } from '@angular/router';
 
 import { RouterModule } from '@angular/router';
@@ -29,6 +29,7 @@ const appRoutes: Routes = [
     AccueilComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)

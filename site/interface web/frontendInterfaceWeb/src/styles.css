@@ -37,3 +37,7 @@ a:visited{
 #spotifySettingButton{
   float: right;
 }
+
+span{
+  font-size: 25px;
+}

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-settings-menu',
   templateUrl: './settings-menu.component.html',
@@ -12,4 +14,15 @@ export class SettingsMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmitSpotify(form: NgForm) {
+    console.log(form.value);
+}
+
+  onSubmitTidal(form: NgForm) {
+  console.log(form.value);
+}
+
+  onSubmitDAB(form: NgForm) {
+  console.log(form.value);
+}
 }

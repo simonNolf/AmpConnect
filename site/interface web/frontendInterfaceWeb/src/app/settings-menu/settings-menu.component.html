@@ -1,1 +1,133 @@
 <p>settings-menu works!</p>
+
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse" aria-expanded="true"
+          aria-controls="collapseOne">
+          Spotify
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne">
+      <div class="card-body">
+        <form (ngSubmit)="onSubmitSpotify(f)" #f="ngForm">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">bitrate</label>
+              <input ngModel name="bitrateSpotify" type="number" class="form-control" id="inputEmail4"
+                placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">nom de l'appareil</label>
+              <input ngModel name="nomAppSpotify" type="text" class="form-control" id="inputPassword4"
+                placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">volume de lancement</label>
+            <input ngModel name="volumeSpotify" type="number" class="form-control" id="inputAddress"
+              placeholder="1234 Main St">
+          </div>
+          <button class="btn btn-primary" type="submit">Enregistrer</button>
+        </form>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+            aria-controls="collapseTwo">
+            Tidal
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo">
+        <div class="card-body">
+          <form (ngSubmit)="onSubmitTidal(g)" #g="ngForm" id="tidalForm" class="form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">bitrate</label>
+                <input ngModel name="bitrateTidal" type="number" class="form-control" id="inputEmail4"
+                  placeholder="Email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">nom de l'appareil</label>
+                <input ngModel name="nomAppTidal" type="text" class="form-control" id="inputPassword4"
+                  placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">volume de lancement</label>
+              <input ngModel name="volumeTidal" type="text" class="form-control" id="inputAddress"
+                placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">ND</label>
+              <input ngModel name="ND1" type="text" class="form-control" id="inputAddress2"
+                placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">ND</label>
+                <input ngModel name="ND2" type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">ND</label>
+                <input ngModel name="ND3" type="text" class="form-control" id="inputZip">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+            aria-expanded="false" aria-controls="collapseThree">
+            DAB+
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree">
+        <div class="card-body">
+          <form (ngSubmit)="onSubmitDAB(h)" #h="ngForm" id="DAB+Form" class="form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">ND</label>
+                <input ngModel name="ND1" type="text" class="form-control" id="inputEmail4" placeholder="Email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">ND</label>
+                <input ngModel name="ND2" type="text" class="form-control" id="inputPassword4" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">ND</label>
+              <input ngModel name="ND3" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">ND</label>
+              <input ngModel name="ND4" type="text" class="form-control" id="inputAddress2"
+                placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">ND</label>
+                <input ngModel name="ND5" type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">ND</label>
+                <input ngModel name="ND6" type="text" class="form-control" id="inputZip">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
