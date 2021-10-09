@@ -1,22 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <span class="navbar-brand">Ampconnect</span>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/">Accueil</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/settings">Settings</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/connection">Connection</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/help">Help</a>
-      </li>
-    </ul>
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <div id="container-flex"><img id="rasberry" src="../assets/rasberry.png"><h1 class="fs-5 d-none d-sm-inline">Ampconnect</h1></div>
+        
+        <hr>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+          <li class="nav-item" routerLinkActive="active">
+            <a routerLink="/" class="nav-link align-middle px-0 ">
+              <span class="ms-1 d-none d-sm-inline">Accueil</span>
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a routerLink="/settings" class="nav-link px-0 align-middle">
+              <span class="ms-1 d-none d-sm-inline">Settings</span> </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/connection" class="nav-link px-0 align-middle">
+              <span class="ms-1 d-none d-sm-inline">Connection</span></a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/help" class="nav-link px-0 align-middle ">
+              <span class="ms-1 d-none d-sm-inline">Help</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</nav>
-<div>
-  <router-outlet></router-outlet>
 </div>

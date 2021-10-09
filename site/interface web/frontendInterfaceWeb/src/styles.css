@@ -5,3 +5,35 @@ nav{
 nav span{
   font-size: 20px !important;
 }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+hr{
+  border:  solid red 1px;
+  width: 100% !important;
+}
+
+#rasberry{
+  width: 50px;
+  height: 60px;
+  display: inline-block;
+}
+
+#container-flex{
+  display: flex;
+}
+
+a:visited{
+  background-color: red !important;
+}
+
+#spotify{
+  border: solid black 2px;
+  width: 50%;
+}
+
+#spotifySettingButton{
+  float: right;
+}
