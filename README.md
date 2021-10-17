@@ -1,2 +1,2 @@
 # AmpConnect
-A connected dac 
+A connected dac. 
