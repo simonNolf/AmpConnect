@@ -21,11 +21,6 @@
             android:title="sync" />
 
         <item
-            android:id="@+id/nav_trash"
-            android:icon="@drawable/ic_baseline_delete_24"
-            android:title="trash" />
-
-        <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_baseline_settings_24"
             android:title="settings" />
@@ -36,6 +31,10 @@
         <menu>
             <group>
                 <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/ic_baseline_perm_identity_24"
+                    android:title="profile"/>
+                <item
                     android:id="@+id/nav_login"
                     android:icon="@drawable/ic_baseline_login_24"
                     android:title="login" />
@@ -45,18 +44,18 @@
 
     </item>
 
-    <item android:title="Communicate">
+    <item android:title="players">
 
         <menu>
             <group>
                 <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_baseline_share_24"
-                    android:title="Share" />
+                    android:id="@+id/nav_local"
+                    android:icon="@drawable/ic_baseline_music_note_24"
+                    android:title="local" />
                 <item
-                    android:id="@+id/nav_rate_us"
-                    android:icon="@drawable/ic_baseline_rate_review_24"
-                    android:title="Rate Us" />
+                    android:id="@+id/nav_youtube"
+                    android:icon="@drawable/ic_baseline_music_video_24"
+                    android:title="Youtube"/>
             </group>
         </menu>
 
