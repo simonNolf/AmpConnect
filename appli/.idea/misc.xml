@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.225" />
+        <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/btn_bg.xml" value="0.10185185185185185" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.225" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.225" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.225" />
@@ -11,17 +12,21 @@
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.225" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_music_note_24.xml" value="0.30925925925925923" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_music_video_24.xml" value="0.30925925925925923" />
+        <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_pause_24.xml" value="0.10185185185185185" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_perm_identity_24.xml" value="0.30925925925925923" />
+        <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.10185185185185185" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_rate_review_24.xml" value="0.225" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.225" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.225" />
+        <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_skip_previous_24.xml" value="0.10185185185185185" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_baseline_sync_24.xml" value="0.225" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_dab_background.xml" value="0.30925925925925923" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/drawable/ic_launcher_background.xml" value="0.225" />
+        <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/layout/activity_local_fragment.xml" value="0.371875" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/layout/fragment_d_a_b.xml" value="0.3578125" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/layout/fragment_home.xml" value="0.18034447821681865" />
-        <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/layout/fragment_local.xml" value="0.371875" />
+        <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/layout/fragment_local.xml" value="0.21843003412969283" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/layout/fragment_login.xml" value="0.371875" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/layout/fragment_message.xml" value="0.17350557244174267" />
         <entry key="..\:/Users/Nolf Simon/Desktop/EPHEC/2021-2022/Q1/projet d'integration/AmpConnect/appli/app/src/main/res/layout/fragment_profile.xml" value="0.371875" />
