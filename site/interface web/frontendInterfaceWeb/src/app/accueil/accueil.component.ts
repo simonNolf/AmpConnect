@@ -7,8 +7,6 @@ import { faForward } from '@fortawesome/free-solid-svg-icons';
 import { User } from '../interface/user';
 import { HttpService } from '../service/http.service';
 
-
-
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
@@ -16,43 +14,64 @@ import { HttpService } from '../service/http.service';
 })
 export class AccueilComponent implements OnInit {
 
-  faPlay=faPlay;
-  faPause =faPause;
+  faPlay = faPlay;
+  faPause = faPause;
   faForward = faForward
-  faBackward =faBackward
- list = [] as any
+  faBackward = faBackward
+  list = [] as any
   Titre: string = "ceci est le titre de la musique";
   time: string = "TBD";
 
-  constructor(private HttpService: HttpService) { }
+  constructor(private HttpService: HttpService) {}
 
-  
+
   ngOnInit(): void {
-     this.HttpService.postYoutubeSettings().subscribe(data => this.list = data)
-    console.log(this.list)
+    
+    /**
+     * this.HttpService.getTitleMusic().subscribe(data => {this.list = data})
+     * 
+     * this.HttpService.getTimeMusic().subscribe(data => {this.list = data})
+     * 
+    */
   }
 
   getTitle() {
+    
     return this.Titre;
   }
-  getTime()
-  {
-    return this.time ;
-  }
-  onBackMusic(){
-    console.log("backMusic")
+  getTime() {
     
+    return this.time;
+  }
+  onBackMusic() {
+    this.HttpService.getBackwardEvent().subscribe(data => {
+      this.list = data
+    })
+
+    console.log("backMusic")
+
   }
 
-  onPlayMusic(){
+  onPlayMusic() {
+    this.HttpService.getPlayEvent().subscribe(data => {
+      this.list = data
+    })
     console.log("onPlaykMusic")
   }
 
-  onPauseMusic(){
+  onPauseMusic() {
+    this.HttpService.getPauseEvent().subscribe(data => {
+      this.list = data
+    })
+
     console.log("onPauseMusic")
   }
 
-  onForwardMusic(){
+  onForwardMusic() {
+    this.HttpService.getForwardEvent().subscribe(data => {
+      this.list = data
+    })
+
     console.log("onForwardMusic")
   }
 
