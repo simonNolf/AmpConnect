@@ -41,3 +41,7 @@ a:visited{
 span{
   font-size: 25px;
 }
+
+.card{
+width: 1500px !important;
+}

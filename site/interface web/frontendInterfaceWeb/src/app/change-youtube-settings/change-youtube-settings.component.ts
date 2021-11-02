@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {Component,OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-change-youtube-settings',
@@ -7,14 +7,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./change-youtube-settings.component.css']
 })
 export class ChangeYoutubeSettingsComponent implements OnInit {
+  public displayYoutubeForm: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onSubmitYoutube(form: NgForm) {
-    console.log(form.value);
-}
+ 
+ 
 
 }

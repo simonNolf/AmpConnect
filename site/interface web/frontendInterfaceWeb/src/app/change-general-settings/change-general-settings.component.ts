@@ -13,8 +13,6 @@ export class ChangeGeneralSettingsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmitGeneral(form: NgForm) {
-    console.log(form.value);
-}
+  
 
 }

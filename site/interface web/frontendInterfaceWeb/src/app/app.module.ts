@@ -12,9 +12,7 @@ import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ChangeGeneralSettingsComponent } from './change-general-settings/change-general-settings.component';
-import { ChangeYoutubeSettingsComponent } from './change-youtube-settings/change-youtube-settings.component';
-import { ChangeDabSettingsComponent } from './change-dab-settings/change-dab-settings.component';
+import { CommonModule } from '@angular/common';
 
 
 const appRoutes: Routes = [
@@ -31,15 +29,16 @@ const appRoutes: Routes = [
     ConnexionStreamingComponent,
     HelpComponent,
     AccueilComponent,
-    ChangeGeneralSettingsComponent,
-    ChangeYoutubeSettingsComponent,
-    ChangeDabSettingsComponent,
+    
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    CommonModule,
+    FontAwesomeModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
