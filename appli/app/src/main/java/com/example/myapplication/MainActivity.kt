@@ -1,71 +1,54 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
-import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
+import android.view.Menu
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var toggle : ActionBarDrawerToggle
-    private lateinit var drawerLayout: DrawerLayout
-
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        drawerLayout = findViewById(R.id.drawerLayout)
-        val navView : NavigationView = findViewById(R.id.nav_view)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        toggle = ActionBarDrawerToggle(this, drawerLayout,R.string.open, R.string.close)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+        setSupportActionBar(binding.appBarMain.toolbar)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        navView.setNavigationItemSelectedListener {
-
-            it.isChecked = true
-
-            when(it.itemId){
-
-                R.id.nav_home -> replaceFragment(HomeFragment(),it.title.toString())
-                R.id.nav_message -> replaceFragment(MessageFragment(),it.title.toString())
-                R.id.nav_sync -> Toast.makeText(applicationContext, "Clicked Sync", Toast.LENGTH_SHORT).show()
-                R.id.nav_settings -> replaceFragment(SettingsFragment(),it.title.toString())
-                R.id.nav_profile -> replaceFragment(ProfileFragment(),it.title.toString())
-                R.id.nav_login -> replaceFragment(LoginFragment(),it.title.toString())
-                R.id.nav_local -> Toast.makeText(applicationContext, "Clicked Local", Toast.LENGTH_SHORT).show()
-                R.id.nav_youtube -> replaceFragment(YoutubeFragment(),it.title.toString())
-
-            }
-
-            true
-        }
-
+        val drawerLayout: DrawerLayout = binding.drawerLayout
+        val navView: NavigationView = binding.navView
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_home, R.id.nav_login, R.id.nav_settings, R.id.nav_local, R.id.nav_profile, R.id.nav_youtube
+            ), drawerLayout
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
     }
 
-    private fun replaceFragment(fragment: Fragment,title : String){
-
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frameLayout, fragment)
-        fragmentTransaction.commit()
-        drawerLayout.closeDrawers()
-        setTitle(title)
-
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.main, menu)
+        return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        if (toggle.onOptionsItemSelected(item)){
-            return true
-        }
-        return super.onOptionsItemSelected(item)
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
