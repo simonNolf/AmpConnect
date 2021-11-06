@@ -14,6 +14,10 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 
+import { SettingHttpService } from './services/settings-http.service';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
@@ -37,10 +41,13 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [
+    SettingHttpService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

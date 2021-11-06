@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpPostService } from './http-post.service';
+import { DataSelectionService } from './data-selection.service';
 
-describe('HttpPostService', () => {
-  let service: HttpPostService;
+describe('DataSelectionService', () => {
+  let service: DataSelectionService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(HttpPostService);
+    service = TestBed.inject(DataSelectionService);
   });
 
   it('should be created', () => {

@@ -46,4 +46,13 @@ app.listen(port, () => __awaiter(void 0, void 0, void 0, function* () {
     }
     logger_1.default.info(`server started at http://localhost:${port}`);
 }));
+app.get("/DabSettings", (req, res) => {
+    res.status(200);
+});
+app.get("/GeneralSettings", (req, res) => {
+    res.status(200);
+});
+app.get("/YtbSettings", (req, res) => {
+    res.status(200);
+});
 //# sourceMappingURL=server.js.map

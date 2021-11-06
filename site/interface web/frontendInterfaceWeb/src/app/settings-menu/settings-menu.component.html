@@ -18,13 +18,13 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputAppNameSpot">nom de l'appareil</label>
-                <input required ngModel name="deviceName" type="text" class="form-control" id="inputAppNameSpot"
+                <input required ngModel name="appName" type="text" class="form-control" id="inputAppNameSpot"
                   placeholder="nom de l'appareil">
               </div>
             </div>
             <div class="form-group">
               <label for="SpotifyVolume">volume de lancement</label>
-              <input required ngModel name="startVolume" type="number" class="form-control" id="SpotifyVolume"
+              <input required ngModel name="volume" type="number" class="form-control" id="SpotifyVolume"
                 placeholder="volume entre 0 et 100" style="width: 195px;" min="0" max="100">
             </div>
             <button class="btn btn-primary" type="submit">valider</button>
@@ -33,8 +33,8 @@
       </div>
       <div *ngIf="displayGeneralForm === false">
         <ul>
-          <li> nom actuel de l'apparreil : </li>
-          <li> volume de lancement actuel : </li>
+          <li> nom actuel de l'apparreil :  {{nomApplication}}</li>
+          <li> volume de lancement actuel :{{volumeApplication}}</li>
         </ul>
       </div>
       <button (click)="onGnForm()">modifier</button>

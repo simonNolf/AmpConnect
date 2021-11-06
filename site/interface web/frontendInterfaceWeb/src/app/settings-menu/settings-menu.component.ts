@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
+import { SettingHttpService } from '../services/settings-http.service';
 
 @Component({
   selector: 'app-settings-menu',
@@ -8,33 +9,43 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./settings-menu.component.css']
 })
 export class SettingsMenuComponent implements OnInit {
-  
+
   public displayYoutubeForm: boolean = false;
   public displayGeneralForm: boolean = false;
   public displayDabForm: boolean = false;
-  
+  listDab = [] as any
+  listGeneral = [] as any
+  listYoutube = [] as any
 
-  constructor() { }
+  public nomApplication:string = ""
+  public volumeApplication:Number = 0
+
+
+  constructor(private HttpService: SettingHttpService) {}
+
+
 
   ngOnInit(): void {
+    this.HttpService.getDabSettings().subscribe(data => {
+      this.listDab= data
+    })
+    this.HttpService.getYtbSettings().subscribe(data => {
+      this.listYoutube = data
+    })
+    this.HttpService.getGeneralSettings().subscribe(data => {
+      this.nomApplication= data[0].appName
+      this.volumeApplication= data[0].volume
+    })
 
   }
+  
 
-  getGene(){
-return this.displayGeneralForm
-  }
-  getYtb(){
-    return this.displayYoutubeForm
-  }
-  getDab(){
-    return this.displayDabForm
-  }
 
   onSubmitDAB(form: NgForm) {
     console.log(form.value);
     this.displayDabForm = false
-    
-}
+
+  }
 
   onSubmitYoutube(form: NgForm) {
     console.log(form.value);
@@ -42,12 +53,17 @@ return this.displayGeneralForm
   }
 
   onSubmitGeneral(form: NgForm) {
-    console.log(form.value);
+
+    this.HttpService.addGeneralSettings(form.value).subscribe(test => {
+      console.log(test)
+    })
+
     this.displayGeneralForm = false
-}
+  }
 
   onGnForm() {
     this.displayGeneralForm = true
+    console.log(this.listGeneral[0].appName)
   }
 
   onYtForm() {
@@ -59,14 +75,14 @@ return this.displayGeneralForm
 
   }
 
-  onAnnulerFormYtb(){
+  onAnnulerFormYtb() {
     this.displayYoutubeForm = false
   }
-  onAnnulerFormGeneral(){
+  onAnnulerFormGeneral() {
     this.displayGeneralForm = false
 
   }
-  onAnnulerFormDab(){
-this.displayDabForm = false
+  onAnnulerFormDab() {
+    this.displayDabForm = false
   }
 }
