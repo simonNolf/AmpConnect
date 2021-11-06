@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.ampconnect
 
 import android.Manifest
 import android.content.Intent
@@ -11,12 +11,11 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 
 class SplashScreen : AppCompatActivity() {
-    var permission = arrayOf(
+    var permissions = arrayOf(
         Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.MODIFY_AUDIO_SETTINGS
     )
     val permissionCode = 10001
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setFlags(
@@ -24,19 +23,16 @@ class SplashScreen : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         setContentView(R.layout.activity_splash_screen)
-        Handler().postDelayed({
-            startActivity(Intent(applicationContext, MainActivity::class.java))
-        }, 10000)
-
         if (checkPermission()) {
             goHome()
         } else {
-            ActivityCompat.requestPermissions(this, permission, permissionCode)
+            ActivityCompat.requestPermissions(this, permissions, permissionCode)
         }
+
     }
 
     private fun checkPermission(): Boolean {
-        for (perms in permission) {
+        for (perms in permissions) {
             var data = application.checkCallingOrSelfPermission(perms)
             if (data != PackageManager.PERMISSION_GRANTED) {
                 return false
@@ -48,8 +44,7 @@ class SplashScreen : AppCompatActivity() {
     private fun goHome() {
         Handler().postDelayed({
             startActivity(Intent(applicationContext, MainActivity::class.java))
-        }, 10000)
-
+        }, 5000)
     }
 
     override fun onRequestPermissionsResult(
@@ -58,22 +53,23 @@ class SplashScreen : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
         when (requestCode) {
             permissionCode -> {
-                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                     goHome()
+                if(grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED){
+                    goHome()
                 }else{
-                    showToast("please Grant Pemissions")
+                    showToast("Please Grant Permissions")
                 }
+
             }
             else -> {
-                showToast("Erreur Occured")
+showToast("Error Occured")
             }
         }
     }
-
-    private fun showToast(msg: String) {
-        Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
+    private fun showToast(msg : String){
+        Toast.makeText(applicationContext,msg,Toast.LENGTH_SHORT).show()
         finish()
     }
 }
