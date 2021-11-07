@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./settings-menu.component.css']
 })
 export class SettingsMenuComponent implements OnInit {
+
   constructor() { }
 
   ngOnInit(): void {
@@ -24,6 +25,4 @@ export class SettingsMenuComponent implements OnInit {
   onSubmitDAB(form: NgForm) {
   console.log(form.value);
 }
-
-
 }

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
-
 @Component({
   selector: 'app-connexion-streaming',
   templateUrl: './connexion-streaming.component.html',
@@ -9,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnexionStreamingComponent implements OnInit {
 
- 
 
   constructor() { }
 
