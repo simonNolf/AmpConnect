@@ -4,6 +4,7 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faPause } from '@fortawesome/free-solid-svg-icons';
 import { faBackward } from '@fortawesome/free-solid-svg-icons';
 import { faForward } from '@fortawesome/free-solid-svg-icons';
+import { User } from '../interface/user';
 import { HttpService } from '../service/http.service';
 
 @Component({
@@ -38,12 +39,10 @@ export class AccueilComponent implements OnInit {
     
     return this.Titre;
   }
-
   getTime() {
     
     return this.time;
   }
-  
   onBackMusic() {
     this.HttpService.getBackwardEvent().subscribe(data => {
       this.list = data

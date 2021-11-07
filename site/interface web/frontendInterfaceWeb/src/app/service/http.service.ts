@@ -18,7 +18,7 @@ export class HttpService {
 
   getPlayEvent():Observable<User[]>{
 
-    return this.http.get<User[]>("../assets/Users.json")
+    return this.http.get<User[]>("/audio/play")
   }
 
   getPauseEvent():Observable<User[]>{

@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpService } from './service/http.service';
+import { ChangeSettingsComponent } from './change-settings/change-settings.component';
+import { ShowSettingsComponent } from './show-settings/show-settings.component';
 
 
 const appRoutes: Routes = [
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     ConnexionStreamingComponent,
     HelpComponent,
     AccueilComponent,
-    
+    ChangeSettingsComponent,
+    ShowSettingsComponent,
   ],
   imports: [
     FormsModule,
