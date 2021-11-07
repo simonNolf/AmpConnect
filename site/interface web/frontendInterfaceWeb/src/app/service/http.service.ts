@@ -7,58 +7,20 @@ import { User } from '../interface/user';
   providedIn: 'root'
 })
 export class HttpService {
-
-  
-
+  private url : string = "../assets/Users.json"
   constructor(private http : HttpClient) { }
 
-  /**
-  * requête pour la partie audio de l'interface web
-  */
+  postYoutubeSettings():Observable<User[]>{
 
-  getPlayEvent():Observable<User[]>{
-
-    return this.http.get<User[]>("/audio/play")
+    return this.http.get<User[]>(this.url)
   }
 
-  getPauseEvent():Observable<User[]>{
-
-    return this.http.get<User[]>("/audio/pause")
+  postGeneralSettings(){
+    console.log('requete post pour les paramètres généraux')
   }
 
-  getForwardEvent():Observable<User[]>{
-
-    return this.http.get<User[]>("/audio/farward")
-  }
-
-  getBackwardEvent():Observable<User[]>{
-
-    return this.http.get<User[]>("/audio/backward")
-  }
-
-  getTitleMusic():Observable<User[]>{
-
-    return this.http.get<User[]>("/audio/title")
-  }
-
-  getTimeMusic():Observable<User[]>{
-
-    return this.http.get<User[]>("/audio/time")
-  }
-
-
-  /**
-  * requête pour les formulaires de paramétrages de l'interface web
-  */
-
-   postYoutubeSettings():Observable<User[]>{
-
-    return this.http.get<User[]>("/youtubeSettings")
-  }
-
-  postDABSettings():Observable<User[]>{
-
-    return this.http.get<User[]>("/dabSettings")
+  z(){
+    console.log('requete post pour les paramètres DAB+')
   }
 
 }

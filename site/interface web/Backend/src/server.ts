@@ -33,17 +33,3 @@ app.listen( port, async () => {
     }
     Logger.info(`server started at http://localhost:${port}`);
 } );
-
-// récupération des paramètres Youtube
-
-app.get( "/youtubeSettings", ( req:express.Request, res:express.Response ) => {
-    
-
-});
-
-// récupération des paramètres DAB+
-
-app.get( "/dabSettings", ( req:express.Request, res:express.Response ) => {
-    
-
-});
