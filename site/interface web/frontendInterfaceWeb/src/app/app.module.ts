@@ -18,7 +18,6 @@ import { CommonModule } from '@angular/common';
 
 import { SettingHttpService } from './services/settings-http.service';
 
-import { HttpClientModule } from '@angular/common/http';
 
 import { HttpService } from './service/http.service';
 
@@ -54,11 +53,8 @@ const appRoutes: Routes = [
   providers: [
     SettingHttpService,
     FontAwesomeModule,
-    HttpClientModule
-  ],
-  providers: [
+    HttpClientModule,
     HttpService
-
   ],
   bootstrap: [AppComponent]
 })
