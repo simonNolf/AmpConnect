@@ -6,30 +6,44 @@
       <h5 class="mb-0">
         <button class="btn btn-link" data-toggle="collapse" data-target="#collapse" aria-expanded="true"
           aria-controls="collapseOne">
+
           paramètres généraux
+
         </button>
       </h5>
     </div>
+    <div>
+      <div *ngIf="displayGeneralForm === true">
 
-    <div id="collapseOne">
-      <div class="card-body">
-        <form ngNativeValidate (ngSubmit)="onSubmitSpotify(f)" #f="ngForm">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputAppNameSpot">nom de l'appareil</label>
-              <input required ngModel name="nomAppSpotify" type="text" class="form-control" id="inputAppNameSpot"
-                placeholder="nom de l'appareil">
+
+        <div class="card-body">
+          <form ngNativeValidate (ngSubmit)="onSubmitGeneral(f)" #f="ngForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputAppNameSpot">nom de l'appareil</label>
+                <input required ngModel name="appName" type="text" class="form-control" id="inputAppNameSpot"
+                  placeholder="nom de l'appareil">
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="SpotifyVolume">volume de lancement</label>
-            <input required ngModel name="volumeSpotify" type="number" class="form-control" id="SpotifyVolume"
-              placeholder="volume entre 0 et 100" style="width: 195px;" min="0" max="100">
-          </div>
-          <button class="btn btn-primary" type="submit">Enregistrer</button>
-        </form>
+            <div class="form-group">
+              <label for="SpotifyVolume">volume de lancement</label>
+              <input required ngModel name="volume" type="number" class="form-control" id="SpotifyVolume"
+                placeholder="volume entre 0 et 100" style="width: 195px;" min="0" max="100">
+            </div>
+            <button class="btn btn-primary" type="submit">valider</button>
+          </form>
+        </div>
       </div>
+      <div *ngIf="displayGeneralForm === false">
+        <ul>
+          <li> nom actuel de l'apparreil :  {{nomApplication}}</li>
+          <li> volume de lancement actuel :{{volumeApplication}}</li>
+        </ul>
+      </div>
+      <button (click)="onGnForm()">modifier</button>
+      <button (click)="onAnnulerFormGeneral()" [disabled]="!displayGeneralForm">annuler</button>
     </div>
+  </div>
   <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
@@ -39,22 +53,75 @@
         </button>
       </h5>
     </div>
-    <div id="collapseOne">
-      <div class="card-body">
-        
+
+    <div>
+      <div *ngIf="displayYoutubeForm === true">
+        <div class="card-body">
+          <form ngNativeValidate (ngSubmit)="onSubmitYoutube(h)" #h="ngForm" id="DAB+Form" class="form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">ND</label>
+                <input required ngModel name="ND1" type="text" class="form-control" id="inputEmail4"
+                  placeholder="Email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">ND</label>
+                <input required ngModel name="ND2" type="text" class="form-control" id="inputPassword4"
+                  placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">ND</label>
+              <input required ngModel name="ND3" type="text" class="form-control" id="inputAddress"
+                placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">ND</label>
+              <input required ngModel name="ND4" type="text" class="form-control" id="inputAddress2"
+                placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">ND</label>
+                <input required ngModel name="ND5" type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">ND</label>
+                <input required ngModel name="ND6" type="text" class="form-control" id="inputZip">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">valider</button>
+          </form>
+
+        </div>
+
       </div>
-    </div>
-    </div>
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
-            aria-expanded="false" aria-controls="collapseThree">
-            DAB+
-          </button>
-        </h5>
+      <div *ngIf="displayYoutubeForm === false">
+        <ul>
+          <li> ND : </li>
+          <li> ND : </li>
+          <li> ND : </li>
+          <li> ND : </li>
+          <li> ND : </li>
+          <li> ND : </li>
+        </ul>
       </div>
-      <div id="collapseThree">
+      <button (click)="onYtForm()">modifier</button>
+      <button (click)="onAnnulerFormYtb()" [disabled]="!displayYoutubeForm">annuler</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+          aria-controls="collapseThree">
+          DAB+
+        </button>
+      </h5>
+    </div>
+    <div>
+
+      <div *ngIf="displayDabForm === true">
         <div class="card-body">
           <form ngNativeValidate (ngSubmit)="onSubmitDAB(h)" #h="ngForm" id="DAB+Form" class="form">
             <div class="form-row">
@@ -89,9 +156,23 @@
                 <input required ngModel name="ND6" type="text" class="form-control" id="inputZip">
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Enregistrer</button>
+            <button type="submit" class="btn btn-primary">valider</button>
           </form>
         </div>
+
       </div>
+      <div *ngIf="displayDabForm === false">
+        <ul>
+          <li> ND : </li>
+          <li> ND : </li>
+          <li> ND : </li>
+          <li> ND : </li>
+          <li> ND : </li>
+          <li> ND : </li>
+        </ul>
+      </div>
+      <button (click)="onDabForm()">modifier</button>
+      <button (click)="onAnnulerFormDab()" [disabled]="!displayDabForm">annuler</button>
     </div>
   </div>
+</div>
