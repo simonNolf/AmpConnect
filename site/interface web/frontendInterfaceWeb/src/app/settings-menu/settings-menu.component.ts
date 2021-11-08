@@ -10,6 +10,7 @@ import { SettingHttpService } from '../services/settings-http.service';
 })
 export class SettingsMenuComponent implements OnInit {
 
+
   public displayYoutubeForm: boolean = false;
   public displayGeneralForm: boolean = false;
   public displayDabForm: boolean = false;
@@ -22,6 +23,7 @@ export class SettingsMenuComponent implements OnInit {
 
 
   constructor(private HttpService: SettingHttpService) {}
+
 
 
 
@@ -46,6 +48,7 @@ export class SettingsMenuComponent implements OnInit {
     this.displayDabForm = false
 
   }
+
 
   onSubmitYoutube(form: NgForm) {
     console.log(form.value);
@@ -85,4 +88,5 @@ export class SettingsMenuComponent implements OnInit {
   onAnnulerFormDab() {
     this.displayDabForm = false
   }
+
 }

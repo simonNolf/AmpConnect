@@ -38,11 +38,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home -> replaceFragment(HomeFragment(),it.title.toString())
                 R.id.nav_message -> replaceFragment(MessageFragment(),it.title.toString())
                 R.id.nav_sync -> Toast.makeText(applicationContext, "Clicked Sync", Toast.LENGTH_SHORT).show()
-                R.id.nav_trash -> Toast.makeText(applicationContext, "Clicked Trash", Toast.LENGTH_SHORT).show()
-                R.id.nav_login -> Toast.makeText(applicationContext, "Clicked Login", Toast.LENGTH_SHORT).show()
                 R.id.nav_settings -> replaceFragment(SettingsFragment(),it.title.toString())
-                R.id.nav_share -> Toast.makeText(applicationContext, "Clicked Share", Toast.LENGTH_SHORT).show()
-                R.id.nav_rate_us -> Toast.makeText(applicationContext, "Clicked Rate us", Toast.LENGTH_SHORT).show()
+                R.id.nav_profile -> replaceFragment(ProfileFragment(),it.title.toString())
+                R.id.nav_login -> replaceFragment(LoginFragment(),it.title.toString())
+                R.id.nav_local -> replaceFragment(LocalFragment(),it.title.toString())
+                R.id.nav_youtube -> replaceFragment(YoutubeFragment(),it.title.toString())
 
             }
 

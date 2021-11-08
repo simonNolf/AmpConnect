@@ -42,6 +42,13 @@ span{
   font-size: 25px;
 }
 
+
 .card{
 width: 1500px !important;
 }
+
+i{
+  width: 100px;
+  height: 100px;
+}
+

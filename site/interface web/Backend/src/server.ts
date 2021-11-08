@@ -40,6 +40,7 @@ app.listen(port, async () => {
         Logger.error('Unable to connect to the database:', error);
     }
     Logger.info(`server started at http://localhost:${port}`);
+
 });
 
 app.get("/DabSettings", (req: express.Request, res: express.Response) => {
