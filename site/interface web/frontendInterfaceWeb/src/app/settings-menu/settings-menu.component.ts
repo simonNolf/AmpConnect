@@ -18,6 +18,8 @@ export class SettingsMenuComponent implements OnInit {
   listGeneral = [] as any
   listYoutube = [] as any
 
+  generalInput = [] as any
+
   public nomApplication:string = ""
   public volumeApplication:Number = 0
 
