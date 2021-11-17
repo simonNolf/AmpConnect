@@ -43,6 +43,8 @@ app.listen(port, async () => {
 
 });
 
+/** SETTINGS */
+
 app.get("/DabSettings", (req: express.Request, res: express.Response) => {
     res.status(200)
     res.json({
@@ -99,3 +101,48 @@ app.post("/sendYoutubeSettings", (req, res, next) => {
       message: 'Objet créé !'
     });
   });
+
+
+  /** AUDIO */
+
+app.get("/audio/play", (req, res, next) => {
+    console.log(req.body);
+    res.status(201).json({
+      message: ' PLAY '
+    });
+  });
+
+app.get("/audio/pause", (req, res, next) => {
+    console.log(req.body);
+    res.status(201).json({
+      message: ' PAUSE '
+    });
+  });
+
+app.get("/audio/forward", (req, res, next) => {
+    console.log(req.body);
+    res.status(201).json({
+      message: ' FORWARD '
+    });
+});
+
+app.get("/audio/backward", (req, res, next) => {
+    console.log(req.body);
+    res.status(201).json({
+      message: ' BACKWARD '
+    });
+});
+
+app.get("/audio/title", (req, res, next) => {
+    console.log(req.body);
+    res.status(201).json({
+      message: ' TITLE '
+    });
+});
+
+app.get("/audio/time", (req, res, next) => {
+    console.log(req.body);
+    res.status(201).json({
+      message: ' TIME '
+    });
+});
