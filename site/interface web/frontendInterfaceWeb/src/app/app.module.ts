@@ -22,7 +22,6 @@ import { SettingHttpService } from './services/settings-http.service';
 import { HttpService } from './service/http.service';
 
 
-
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'settings', component: SettingsMenuComponent },
@@ -44,7 +43,6 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-
     CommonModule,
     FontAwesomeModule,
     HttpClientModule

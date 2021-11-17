@@ -6,6 +6,7 @@ import { faBackward } from '@fortawesome/free-solid-svg-icons';
 import { faForward } from '@fortawesome/free-solid-svg-icons';
 import { HttpService } from '../service/http.service';
 
+
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
@@ -20,6 +21,19 @@ export class AccueilComponent implements OnInit {
   list = [] as any
   Titre: string = "ceci est le titre de la musique";
   time: string = "TBD";
+  musicPlaying : boolean = false
+  audio = new Audio()
+
+  msaapDisplayTitle = true;
+msaapDisplayPlayList = true;
+msaapPageSizeOptions = [2,4,6];
+msaapDisplayVolumeControls = true;
+msaapDisplayRepeatControls = true;
+msaapDisplayArtist = false;
+msaapDisplayDuration = false;
+msaapDisablePositionSlider = true;
+
+
 
   constructor(private HttpService: HttpService) {}
 
@@ -57,15 +71,21 @@ export class AccueilComponent implements OnInit {
     this.HttpService.getPlayEvent().subscribe(data => {
       this.list = data
     })
-    console.log("onPlaykMusic")
+    this.audio.src = "../assets/music/station-six.mp3";
+      this.audio.play();
+      console.log("play")
+      
+    
+    
   }
 
   onPauseMusic() {
     this.HttpService.getPauseEvent().subscribe(data => {
       this.list = data
     })
+      this.audio.pause();
+      console.log("pause")
 
-    console.log("onPauseMusic")
   }
 
   onForwardMusic() {
