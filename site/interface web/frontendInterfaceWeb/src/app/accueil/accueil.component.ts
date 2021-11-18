@@ -20,7 +20,7 @@ export class AccueilComponent implements OnInit {
   faBackward = faBackward
   list = [] as any
   Titre: string = "ceci est le titre de la musique";
-  time: string = "TBD";
+  time: number = 0;
   musicPlaying : boolean = false
   audio = new Audio()
 
@@ -49,7 +49,7 @@ msaapDisablePositionSlider = true;
   }
 
   getTitle() {
-    
+    console.log(this.Titre);
     return this.Titre;
   }
 
@@ -63,7 +63,7 @@ msaapDisablePositionSlider = true;
       this.list = data
     })
 
-    console.log("backMusic")
+    return "backMusic"
 
   }
 
