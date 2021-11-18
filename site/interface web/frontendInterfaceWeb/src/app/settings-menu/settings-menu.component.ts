@@ -64,11 +64,11 @@ export class SettingsMenuComponent implements OnInit {
     })
 
     this.displayGeneralForm = false
+    return form.value;
   }
 
   onGnForm() {
     this.displayGeneralForm = true
-    console.log(this.listGeneral[0].appName)
   }
 
   onYtForm() {
