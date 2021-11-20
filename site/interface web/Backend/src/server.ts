@@ -57,10 +57,10 @@ app.get("/DabSettings", (req: express.Request, res: express.Response) => {
 
 app.get("/GeneralSettings", (req: express.Request, res: express.Response) => {
     res.status(200)
-    res.json([{
+    res.json({
         "appName": "Leanne Graham",
         "volume": 50
-    }])
+    })
 
 
 });
@@ -83,21 +83,21 @@ app.get("/YtbSettings", (req: express.Request, res: express.Response) => {
 
 app.post("/sendGeneralSettings", (req, res, next) => {
     console.log(req.body);
-    res.status(201).json({
+    res.status(200).json({
       message: 'Objet créé !'
     });
   });
 
 app.post("/sendDabSettings", (req, res, next) => {
     console.log(req.body);
-    res.status(201).json({
+    res.status(200).json({
       message: 'Objet créé !'
     });
   });
 
 app.post("/sendYoutubeSettings", (req, res, next) => {
     console.log(req.body);
-    res.status(201).json({
+    res.status(200).json({
       message: 'Objet créé !'
     });
   });
@@ -107,42 +107,42 @@ app.post("/sendYoutubeSettings", (req, res, next) => {
 
 app.get("/audio/play", (req, res, next) => {
     console.log(req.body);
-    res.status(201).json({
+    res.status(200).json({
       message: ' PLAY '
     });
   });
 
 app.get("/audio/pause", (req, res, next) => {
     console.log(req.body);
-    res.status(201).json({
+    res.status(200).json({
       message: ' PAUSE '
     });
   });
 
 app.get("/audio/forward", (req, res, next) => {
     console.log(req.body);
-    res.status(201).json({
+    res.status(200).json({
       message: ' FORWARD '
     });
 });
 
 app.get("/audio/backward", (req, res, next) => {
     console.log(req.body);
-    res.status(201).json({
+    res.status(200).json({
       message: ' BACKWARD '
     });
 });
 
 app.get("/audio/title", (req, res, next) => {
     console.log(req.body);
-    res.status(201).json({
+    res.status(200).json({
       message: ' TITLE '
     });
 });
 
 app.get("/audio/time", (req, res, next) => {
     console.log(req.body);
-    res.status(201).json({
+    res.status(200).json({
       message: ' TIME '
     });
 });
