@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-11-20T11:08:06.739Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="yFBoW1x3PD_e3GnFDRZq" version="15.8.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-20T15:05:18.468Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="qgmnnAQgBFslXaEABqkt" version="15.8.3" type="github">
   <diagram id="ojrI9sNC-19SHQx3Z9b1" name="Page-1">
-    <mxGraphModel dx="1422" dy="-403" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="702" dy="-404" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -81,6 +81,12 @@
         </mxCell>
         <mxCell id="7Ec1_xB0QXu3VKuR0h8p-20" value="Ampli" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="354" y="1820" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0swA3suBVdMT6tP5S_Sc-1" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.mongodb;gradientColor=#DFDEDE" vertex="1" parent="1">
+          <mxGeometry x="424" y="1470" width="47" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0swA3suBVdMT6tP5S_Sc-2" value="MongoDB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="417.5" y="1440" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
