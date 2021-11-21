@@ -10,25 +10,46 @@ const app = express();
 const port = 8080; // default port to listen
 const bodyParser = require("body-parser");
 const { MongoClient } = require("mongodb");
-
+const mongoose = require("mongoose");
 const uri =
-  "mongodb+srv://admin:<admin123>@database.c3snt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://admin:admin123@database.c3snt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
-async function listDatabases(client) {
+
+mongoose
+  .connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(console.log("connected"))
+  .catch((err: any) => console.log(err));
+
+async function listDatabases(client: {
+  db: () => {
+    (): any;
+    new (): any;
+    admin: {
+      (): { (): any; new (): any; listDatabases: { (): any; new (): any } };
+      new (): any;
+    };
+  };
+}) {
   let databasesList = await client.db().admin().listDatabases();
 
   console.log("Databases:");
-  databasesList.databases.forEach((db) => console.log(` - ${db.name}`));
+  databasesList.databases.forEach((db: { name: any }) =>
+    console.log(` - ${db.name}`)
+  );
 }
 async function main() {
   try {
     await client.connect();
 
-    await listDataBases(client);
+    await listDatabases(client);
   } catch (e) {
     console.error(e);
   } finally {
-    await client.colse();
+    await client.close();
   }
 }
 
