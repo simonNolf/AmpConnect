@@ -1,22 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <span class="navbar-brand">Ampconnect</span>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link"  routerLink="/"> acceuil </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/presentation"> présentation du projet </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/tuto"> tutoriel </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/contact"> contact </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div>
-  <router-outlet></router-outlet>
-</div>
+<!-- navbar -->
+<app-navbar></app-navbar>
+
+<router-outlet></router-outlet>
+
+<!-- footer -->
+<app-footer></app-footer>
