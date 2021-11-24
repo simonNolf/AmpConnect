@@ -9,7 +9,7 @@ import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class `MainActivity-old` : AppCompatActivity() {
 
     private lateinit var mp: MediaPlayer
     private var totalTime: Int = 0
