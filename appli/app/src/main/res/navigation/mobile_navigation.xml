@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.example.youtubeapikotlin.ui.home.HomeFragment"
         android:label="YTB"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_Toutube" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -21,5 +21,5 @@
         android:id="@+id/navigation_notifications"
         android:name="com.example.youtubeapikotlin.ui.notifications.NotificationsFragment"
         android:label="Music Local"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_local" />
 </navigation>
