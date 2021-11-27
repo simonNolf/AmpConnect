@@ -10,7 +10,7 @@ data class ChannelModel(
     @SerializedName("items")
     val items: List<Items>
 ) {
-    class Items (
+    data class Items (
 
         @SerializedName("id")
         val id: String,

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 @Keep
 data class ThumbnailsYtb (
     @SerializedName("high")
-    val high: String,
+    val high: High,
 
         ){
     data class High(
