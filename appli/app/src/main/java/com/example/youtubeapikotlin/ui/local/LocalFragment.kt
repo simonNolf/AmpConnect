@@ -1,4 +1,4 @@
-package com.example.youtubeapikotlin.ui.notifications
+package com.example.youtubeapikotlin.ui.local
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +8,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.youtubeapikotlin.R
 import com.example.youtubeapikotlin.databinding.FragmentLocalBinding
 
-class NotificationsFragment : Fragment() {
+class LocalFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
+    private lateinit var notificationsViewModel: LocalViewModel
     private var _binding: FragmentLocalBinding? = null
 
     // This property is only valid between onCreateView and
@@ -26,7 +25,7 @@ class NotificationsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+            ViewModelProvider(this).get(LocalViewModel::class.java)
 
         _binding = FragmentLocalBinding.inflate(inflater, container, false)
         val root: View = binding.root

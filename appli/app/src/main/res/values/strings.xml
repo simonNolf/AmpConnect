@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">AmpConnect</string>
-    <string name="title_home">Youtube</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Local</string>
+    <string name="title_ytb">Youtube</string>
+    <string name="title_playlist">Playlist</string>
+    <string name="title_local">Local</string>
+    <string name="image_local">Image local</string>
+    <string name="logo_local">Logo local</string>
+    <string name="video_thumbnail">Video Thumbnail</string>
+    <string name="search_video">Search</string>
+
 </resources>

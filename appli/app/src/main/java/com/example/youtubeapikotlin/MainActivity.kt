@@ -1,6 +1,8 @@
 package com.example.youtubeapikotlin
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -29,4 +31,16 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+    //override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    //   menuInflater.inflate(R.menu.menu_search,menu)
+    //   return true
+    //}
+
+    //override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    //    if(item.itemId == R.id.menu_search){
+    //        return false
+    //    }
+    //    return super.onOptionsItemSelected(item)
+    //}
 }
