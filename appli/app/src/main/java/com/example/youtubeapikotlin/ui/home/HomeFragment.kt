@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
         homeViewModel.channel.observe(viewLifecycleOwner, Observer {
             if (it != null && it.items.isNotEmpty()){
                 it.items.forEach{ channel ->
-                    textView.text = channel.snippet.title
+                    textView.text = channel.snippet.description
                 }
             }
         })
