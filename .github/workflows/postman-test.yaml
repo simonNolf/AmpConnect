@@ -1,8 +1,5 @@
-name: Test-Build
-on:
-  push:
-    branches:
-      - master
+name: Test Postman
+on: [push]
 jobs:
   test-api:
     runs-on: ubuntu-latest
