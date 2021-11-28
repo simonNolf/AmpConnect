@@ -14,5 +14,9 @@ jobs:
       run: |
           cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
           npm install -g @angular/cli
+    - name: List files in the repository
+      run: |
+          cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
+          npm install
     
 
