@@ -22,4 +22,4 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
       - run: |
         cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
-        npm run test:prod
+        npm run test
