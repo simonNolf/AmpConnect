@@ -13,7 +13,7 @@ import com.example.youtubeapikotlin.diffutils.VideoDiffUtil
 
 class VideoAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var oldItems = emptyList<VideoYtModel.VideoItem>()
+    private var oldItems = arrayListOf<VideoYtModel.VideoItem>()
 
     class VideoHolder(itemView: ItemVideoBinding) : RecyclerView.ViewHolder(itemView.root){
         private val binding = itemView
@@ -41,11 +41,12 @@ class VideoAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return oldItems.size
     }
 
-    fun setData(newList: List<VideoYtModel.VideoItem>){
+    fun setData(newList: List<VideoYtModel.VideoItem>, rv: RecyclerView){
         val videoDiff = VideoDiffUtil(oldItems, newList)
         val diff = DiffUtil.calculateDiff(videoDiff)
-        oldItems = newList
+        oldItems.addAll(newList)
         diff.dispatchUpdatesTo(this)
+        rv.scrollToPosition(oldItems.size - newList.size)
     }
 
 }
