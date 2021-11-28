@@ -13,6 +13,7 @@ jobs:
     - name: List files in the repository
       run: |
           cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
-      run: ls ${{ github.workspace}}
+    - name: ls
+      run: ls
     
 
