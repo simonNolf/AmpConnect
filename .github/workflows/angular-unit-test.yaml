@@ -1,18 +1,21 @@
 name: angularUnitTest
-
-on: [push]
-
+on:
+  push:
+    branches:
+      - 'master'
 jobs:
   build:
-
     runs-on: ubuntu-18.04
-
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js 12.8
+    - name: Use Node 14.x
       uses: actions/setup-node@v1
       with:
-        node-version: 12.8
+        node-version: '12.x'
+    - name: install angular cli
+    - run: npm install -g @angular/cli
     - name: Install dependencies
       run: npm install
-      run: npm test 
+    - name: run tests
+      run: npm run test 
+
