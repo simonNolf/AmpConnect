@@ -10,9 +10,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '14.x'
-    - name: List files in the repository
+    - name: installation angular
       run: |
           cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
-          ls
-    
+          npm install -g @angular/cli
+      - name: installation dépendances
+      run: |
+          cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
+          npm install
+      - name: installation dépendances
+        run: |
+            cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
+            npm run test
 
