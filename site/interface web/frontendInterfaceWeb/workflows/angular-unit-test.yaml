@@ -1,0 +1,23 @@
+name: angularUnitTest
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+    - name: List files in the repository
+      run: |
+          npm install -g @angular/cli
+    - name: List files in the repository
+      run: |
+          npm install
+    - name: List files in the repository
+      run: |
+          npm run test
+    
+
