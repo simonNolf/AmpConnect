@@ -1,7 +1,5 @@
 name: angularUnitTest
-
 on: [push]
-
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -13,12 +11,15 @@ jobs:
         node-version: '14.x'
     - name: List files in the repository
       run: |
+        cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
           npm install -g @angular/cli
     - name: List files in the repository
       run: |
+          cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
           npm install
     - name: List files in the repository
       run: |
+          cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
           npm run test
     
 
