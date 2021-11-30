@@ -16,11 +16,11 @@ export class HttpService {
   * requête pour la partie audio de l'interface web
   */
 
-  getPlayEvent():Observable<User[]>{
 
-    return this.http.get<User[]>("/audio/play")
+  getPlayEvent():Observable<any>{
+
+    return this.http.get<any>("/audio/play")
   }
-
   getPauseEvent():Observable<User[]>{
 
     return this.http.get<User[]>("/audio/pause")

@@ -23,6 +23,8 @@ export class SettingsMenuComponent implements OnInit {
   public nomApplication:string = ""
   public volumeApplication:Number = 0
 
+  
+
 
   constructor(private HttpService: SettingHttpService) {}
 
