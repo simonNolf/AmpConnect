@@ -1,0 +1,22 @@
+h2{
+    text-decoration: underline;
+    font-size: 2vw;
+}
+p{
+    font-size: 1vw;
+    font-family:'Times New Roman', Times, serif;
+}
+#ContenuContact{
+    background-color: red;
+    width: 75%;
+    margin: 5% auto;
+}
+#ImgContact{
+    width: 60%;
+    float: left;
+}
+#TextContact{
+    float: right;
+    width: 30%;
+    margin: 10vw auto;
+}

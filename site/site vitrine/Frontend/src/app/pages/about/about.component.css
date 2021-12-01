@@ -1,0 +1,24 @@
+p{
+    position: absolute;
+    margin: 3% 0 0 20%;
+    color: ghostwhite;
+}
+.banner{
+    background: url(../../../assets/img/bannering2.jpg);
+    height: 600px;
+    background-position: center 20%;
+    background-size: cover;
+  }
+/* #ImgPrincipale{
+    width: 100%;
+} */
+#ImgGauche{
+    width: 44%;
+    float: left;
+    margin: 32vw 0% 1% 5%;
+}
+#ImgDroite{
+    width: 44%;
+    float: right;
+    margin: 32vw 5% 1% 0%;
+}
