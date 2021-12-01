@@ -1,7 +1,13 @@
+  h1{
+    font-size: 2vw;
+  }
   h3{
-    font-size: 2em;
+    font-size: 2vw;
     font-weight: 700;
   }  
+  p{
+    font-size: 1.5vw;
+  }
   #titre{
     margin: 1%;
     text-align: center;
@@ -21,8 +27,8 @@
     position: relative;
     top: 108%;
     left: 50%;
-    width: 18px;
-    height: 18px;
+    width: 1vw;
+    height: 1vw;
     margin: 0 15px 0 0;
     opacity: 0.4;
     transform: translateX(-83px);
