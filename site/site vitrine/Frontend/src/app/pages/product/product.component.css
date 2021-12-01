@@ -1,4 +1,9 @@
+  h3{
+    font-size: 2em;
+    font-weight: 700;
+  }  
   #titre{
+    margin: 1%;
     text-align: center;
   }
   
@@ -6,7 +11,7 @@
     position: relative;
     width: 25%;
     height: 16vw;
-    margin: 30px auto;
+    margin: 30px auto 5% auto;
     font-family: 'Helvetica Neue', sans-serif;
     perspective: 1400px;
     transform-style: preserve-3d;
@@ -94,28 +99,22 @@
   box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
   transform: translate3d(-40%, 0, -250px);
 }
-
-#smartphone{
+#smartphoneImg{
   width: 25%;
   float: left;
   margin-left: 15%;
 }
 #TitreDesc{
   float: right;
-  margin: 10px;
-  background-color: red;
+  margin: 5%;
+  width: 50%;
 }
 .AppSmartphone{
   border: solid;
   border-radius: 10px;
-  margin: 10px 15% 10px 10px;
+  border-color: rgba(0,0,0,0.1);
   padding: 10px;
+  text-align: center;
   width: 75%;
-  text-align: center;
-}
-.BouttonApp{
-  border: solid;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
+  background: rgba(0,0,0,0.1);
 }
