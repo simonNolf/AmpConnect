@@ -57,14 +57,15 @@ export class SettingsMenuComponent implements OnInit {
     this.displayYoutubeForm = false
   }
 
-  onSubmitGeneral(form: NgForm) {
+  onSubmitGeneral(form: any) {
+    this.displayGeneralForm = false
+    return form;
+  }
 
-    this.HttpService.addGeneralSettings(form.value).subscribe(test => {
+  sendSubmitedGeneralData(form: NgForm){
+    this.HttpService.addGeneralSettings(this.onSubmitGeneral(form.value)).subscribe(test => {
       console.log(test)
     })
-
-    this.displayGeneralForm = false
-    return form.value;
   }
 
   onGnForm() {

@@ -1,23 +1,39 @@
-import { Component } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { AccueilComponent } from './accueil.component';
 
-import {HttpClientModule} from '@angular/common/http';
+import { HttpService } from '../service/http.service';
 
 describe('AccueilComponent', () => {
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-        imports: [ HttpClientTestingModule ]
-    })});
+  let fixture: AccueilComponent;
+  let httpServiceMock: HttpService;
 
-  it('should have as title ceci est le titre de la musique', () => {
-    const fixture = TestBed.createComponent(AccueilComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.getTitle()).toEqual('ceci est le titre de la musique');
-  })
+  beforeEach(() => {
+    fixture = new AccueilComponent(
+      httpServiceMock
+    );
+  });
+  for (let i = 0; i < 3; i++) {
+    it(`should have as nomApplication a string`, () => {
+      let AccueilTitre = fixture.Title
+      expect(typeof AccueilTitre).toBe('string');
+    });
+
+    it(`should have as Titre a string`, () => {
+      let AccueilMusicTime = fixture.time
+      expect(typeof AccueilMusicTime).toBe('number');
+    });
+
+    it(`should have as Titre a string`, () => {
+      let AccueilGetMusicTime = fixture.getTime()
+      expect(typeof AccueilGetMusicTime).toBe('number');
+    });
+
+    it(`should have as Titre a string`, () => {
+      let AccueilGetMusicTitle = fixture.getTitle()
+      expect(typeof AccueilGetMusicTitle).toBe('string');
+    });
+  }
 
 });

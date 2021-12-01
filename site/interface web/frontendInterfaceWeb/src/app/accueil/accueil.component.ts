@@ -19,19 +19,11 @@ export class AccueilComponent implements OnInit {
   faForward = faForward
   faBackward = faBackward
   list = [] as any
-  Titre: string = "ceci est le titre de la musique";
+  Title: string = "ceci est le titre de la musique";
   time: number = 0;
   musicPlaying : boolean = false
   audio = new Audio()
 
-  msaapDisplayTitle = true;
-msaapDisplayPlayList = true;
-msaapPageSizeOptions = [2,4,6];
-msaapDisplayVolumeControls = true;
-msaapDisplayRepeatControls = true;
-msaapDisplayArtist = false;
-msaapDisplayDuration = false;
-msaapDisablePositionSlider = true;
 
 
 
@@ -49,8 +41,7 @@ msaapDisablePositionSlider = true;
   }
 
   getTitle() {
-    console.log(this.Titre);
-    return this.Titre;
+    return this.Title;
   }
 
   getTime() {
