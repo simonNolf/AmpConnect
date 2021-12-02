@@ -22,6 +22,7 @@ interface ApiServices {
         //a ptt modif pour l'id de la vidéo ! A VOIR
         @Query("channelId") channelId: String,
         @Query("order") order: String,
-        @Query("pageToken") pageToken: String?
+        @Query("pageToken") pageToken: String?,
+        @Query("q") query : String?
     ): Call<VideoYtModel>
 }

@@ -6,7 +6,7 @@
         android:id="@+id/menu_search"
         android:icon="@drawable/ic_round_search_24"
         android:title="@string/search_video"
-        app:actionProviderClass="androidx.appcompat.widget.SearchView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always"/>
 
 </menu>

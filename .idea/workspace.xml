@@ -5,54 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54938d93-b751-4f3e-a382-0f7cbfcadfdb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/AmpConnect/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/androidTest/java/com/example/ampconnect/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/java/com/example/ampconnect/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/drawable-v24/cover.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/drawable/btn_bg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/drawable/ic_baseline_pause_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/drawable/ic_baseline_skip_next_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/drawable/ic_baseline_skip_previous_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/raw/music.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/app/src/test/java/com/example/ampconnect/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmpConnect/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appli/app/libs/YouTubeAndroidPlayerApi.jar" beforeDir="false" afterPath="$PROJECT_DIR$/appli/app/libs/YouTubeAndroidPlayerApi.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appli/app/src/main/java/com/example/youtubeapikotlin/activities/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/appli/app/src/main/java/com/example/youtubeapikotlin/activities/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appli/app/src/main/java/com/example/youtubeapikotlin/activities/PlayerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/appli/app/src/main/java/com/example/youtubeapikotlin/activities/PlayerActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appli/app/src/main/java/com/example/youtubeapikotlin/adapter/VideoAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/appli/app/src/main/java/com/example/youtubeapikotlin/adapter/VideoAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appli/app/src/main/java/com/example/youtubeapikotlin/diffutils/VideoDiffUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/appli/app/src/main/java/com/example/youtubeapikotlin/diffutils/VideoDiffUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appli/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appli/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appli/app/src/main/res/layout/activity_player.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appli/app/src/main/res/layout/activity_player.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

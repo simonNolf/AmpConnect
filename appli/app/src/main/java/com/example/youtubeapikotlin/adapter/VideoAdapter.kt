@@ -1,6 +1,5 @@
 package com.example.youtubeapikotlin.adapter
 
-
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -57,6 +56,11 @@ class VideoAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         oldItems.addAll(newList)
         diff.dispatchUpdatesTo(this)
         rv.scrollToPosition(oldItems.size - newList.size)
+    }
+
+    fun clearAll(){
+        oldItems.clear()
+        notifyDataSetChanged()
     }
 
 }

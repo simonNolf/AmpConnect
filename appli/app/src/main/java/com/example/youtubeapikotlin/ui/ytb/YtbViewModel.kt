@@ -3,7 +3,6 @@ package com.example.youtubeapikotlin.ui.ytb
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.youtubeapikotlin.model.ChannelModel
 import com.example.youtubeapikotlin.model.VideoYtModel
 import com.example.youtubeapikotlin.network.ApiConfig
 import retrofit2.Call
@@ -20,7 +19,8 @@ class YtbViewModel : ViewModel() {
     val isAllVideoLoaded = _isAllVideoLoaded
     private val _message = MutableLiveData<String>()
     val message = _message
-    private var nextPageToken: String? = null
+    var nextPageToken: String? = null
+    var querySearch: String? = null
 
     init {
         getVideoList()
@@ -29,7 +29,15 @@ class YtbViewModel : ViewModel() {
      fun getVideoList(){
         _isLoading.value = true
         // snippet sans doute useless et id de la vidéo youtube que on veux afficher !
-        val client = ApiConfig.getServices().getVideo("snippet", "UCT9zcQNlyht7fRlcjmflRSA","date",nextPageToken)
+        val client = ApiConfig
+            .getServices()
+            .getVideo(
+                "snippet",
+                "UCEnFzIYw3BrndPCddyQ6c5A",
+                "date",
+                nextPageToken,
+                querySearch
+            )
         client.enqueue(object : Callback<VideoYtModel> {
             override fun onResponse(call: Call<VideoYtModel>, response: Response<VideoYtModel>) {
                 _isLoading.value = false
