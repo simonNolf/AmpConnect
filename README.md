@@ -1,7 +1,7 @@
 # AmpConnect
 A connected dac. 
 
-## how to install
+## how to access to the web interface
 
 take all the code
 
