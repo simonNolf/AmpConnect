@@ -4,8 +4,10 @@ import morganMiddleware from "./config/morganMiddleware";
 import Logger from "./lib/logger";
 import sequelize from "./config/DataBase.config";
 import Module from "./model/modules.model";
+
 import generalSettings from "./generalSettings.json"
 const fs = require('fs')
+
 
 
 sequelize.addModels([Module])
@@ -78,15 +80,19 @@ fs.writeFile("./src/generalSettings.json",JSON.stringify(newGeneralSettings),(er
 
   /** AUDIO */
 
-app.get("/audio/play", (req, res, next) => {
-    console.log(req.body);
-    res.status(200).json({
-      message: ' PLAY '
-    });
+app.post("/audio/play", (req, res, next) => {
+    const form = formidable();
+    form.parse(req,(err: any,fields: any,files: any) =>{
+      if(err){
+        next(err);
+      return;
+      }
+      console.log(files.sound.filepath)
+    })
   });
 
 app.get("/audio/pause", (req, res, next) => {
-    console.log(req.body);
+    console.log(req.body.music);
     res.status(200).json({
       message: ' PAUSE '
     });
