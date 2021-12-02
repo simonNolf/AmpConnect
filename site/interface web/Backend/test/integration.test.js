@@ -1,6 +1,6 @@
 
 var request = require('supertest');
-var server = require("../server")
+var server = require("../src/server")
 
 describe('test API /', function () {
 

@@ -4,9 +4,9 @@ import morganMiddleware from "./config/morganMiddleware";
 import Logger from "./lib/logger";
 import bodyParser from "body-parser";
 import formidable from "formidable";
-import {AudioPlayerRouter} from './routes/player.route'
+import {AudioRouter} from "./routes/audio.route";
 
- // default port to listen
+// default port to listen
 const app = express();
 const port = 8080;
 app.use(bodyParser.json());
@@ -14,7 +14,7 @@ app.use(morganMiddleware)
 // define a route handler for the default home page
 app.use("/", express.static(path.join(__dirname, "../../frontendInterfaceWeb/dist/frontendInterfaceWeb")))
 
-app.use("/audio/",AudioPlayerRouter)
+app.use("/audio/",AudioRouter)
 app.get("/index", (req: express.Request, res: express.Response) => {
     res.sendFile(path.join(__dirname, "../../frontendInterfaceWeb/dist/frontendInterfaceWeb/index.html"))
 
@@ -73,72 +73,24 @@ app.get("/YtbSettings", (req: express.Request, res: express.Response) => {
 })
 */
 
-app.post("/sendGeneralSettings", (req, res, next) => {
+app.post("/sendGeneralSettings", (req, res) => {
     Logger.info(req.body);
     res.status(200).json({
       message: 'Objet créé !'
     });
   });
 
-app.post("/sendDabSettings", (req, res, next) => {
+app.post("/sendDabSettings", (req, res) => {
     Logger.info(req.body);
     res.status(200).json({
       message: 'Objet créé !'
     });
   });
 
-app.post("/sendYoutubeSettings", (req, res, next) => {
+app.post("/sendYoutubeSettings", (req, res) => {
     Logger.info(req.body);
     res.status(200).json({
       message: 'Objet créé !'
     });
   });
 
-
-  /** AUDIO */
-
-app.post("/audio/play", (req, res, next) => {
-    const form = formidable();
-    form.parse(req,(err: any,fields: any,files: any) =>{
-      if(err){
-        next(err);
-      return;
-      }
-      Logger.log(files.sound.filepath)
-    })
-  });
-
-app.get("/audio/pause", (req, res, next) => {
-    Logger.info(req.body.music);
-    res.status(200).json({
-      message: ' PAUSE '
-    });
-  });
-
-app.get("/audio/forward", (req, res, next) => {
-    Logger.info(req.body);
-    res.status(200).json({
-      message: ' FORWARD '
-    });
-});
-
-app.get("/audio/backward", (req, res, next) => {
-    Logger.info(req.body);
-    res.status(200).json({
-      message: ' BACKWARD '
-    });
-});
-
-app.get("/audio/title", (req, res, next) => {
-    Logger.info(req.body);
-    res.status(200).json({
-      message: ' TITLE '
-    });
-});
-
-app.get("/audio/time", (req, res, next) => {
-    Logger.info(req.body);
-    res.status(200).json({
-      message: ' TIME '
-    });
-});
