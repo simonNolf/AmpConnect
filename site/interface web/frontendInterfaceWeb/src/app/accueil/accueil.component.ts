@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faPause } from '@fortawesome/free-solid-svg-icons';
 import { faBackward } from '@fortawesome/free-solid-svg-icons';
 import { faForward } from '@fortawesome/free-solid-svg-icons';
 import { HttpService } from '../service/http.service';
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-accueil',
@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-  selectedFile: any = null
+
   faPlay = faPlay;
   faPause = faPause;
   faForward = faForward
@@ -27,7 +27,7 @@ export class AccueilComponent implements OnInit {
 
 
 
-  constructor(private HttpService: HttpService,private http:HttpClient) {}
+  constructor(private HttpService: HttpService) {}
 
 
   ngOnInit(): void {
@@ -85,25 +85,6 @@ export class AccueilComponent implements OnInit {
     })
 
     console.log("onForwardMusic")
-  }
-
-  onSubmitFile(form : NgForm){
-console.log("test")
-  }
-
-  onMusicSelected(event: any){
-    this.selectedFile = <File>event.target.files[0];
-    console.log(this.selectedFile)
-  }
-
-  onUpload(){
-    console.log('test')
-    const fd = new FormData();
-    fd.append('sound',this.selectedFile,this.selectedFile.name)
-    console.log(fd)
-    this.http.post<any>("/audio/play",fd).subscribe(res =>{
-      console.log(res)
-    })
   }
 
 }
