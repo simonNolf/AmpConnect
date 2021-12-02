@@ -73,29 +73,7 @@ app.get("/YtbSettings", (req: express.Request, res: express.Response) => {
     })
 });
 
-
-/**
- * app.post("/sendGeneralSettings", (req: express.Request, res: express.Response) => {
-    res.status(201)
-    console.log(req.body);
-})
-*/
-
 app.post("/sendGeneralSettings", (req, res, next) => {
-    console.log(req.body);
-    res.status(200).json({
-      message: 'Objet créé !'
-    });
-  });
-
-app.post("/sendDabSettings", (req, res, next) => {
-    console.log(req.body);
-    res.status(200).json({
-      message: 'Objet créé !'
-    });
-  });
-
-app.post("/sendYoutubeSettings", (req, res, next) => {
     console.log(req.body);
     res.status(200).json({
       message: 'Objet créé !'
@@ -142,7 +120,9 @@ app.get("/audio/title", (req, res, next) => {
 
 app.get("/audio/time", (req, res, next) => {
     console.log(req.body);
-    res.status(200).json({
+    res.status(20).json({
       message: ' TIME '
     });
 });
+
+module.exports = app
