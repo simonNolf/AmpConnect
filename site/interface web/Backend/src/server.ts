@@ -4,7 +4,8 @@ import morganMiddleware from "./config/morganMiddleware";
 import Logger from "./lib/logger";
 import sequelize from "./config/DataBase.config";
 import Module from "./model/modules.model";
-
+import generalSettings from "./generalSettings.json"
+const fs = require('fs')
 
 
 sequelize.addModels([Module])
@@ -45,39 +46,33 @@ app.listen(port, async () => {
 
 /** SETTINGS */
 
-app.get("/DabSettings", (req: express.Request, res: express.Response) => {
-    res.status(200)
-    res.json({
-        "appName": "Leanne Graham",
-        "volume": 50
-    })
 
-
-});
 
 app.get("/GeneralSettings", (req: express.Request, res: express.Response) => {
     res.status(200)
-    res.json({
-        "appName": "Leanne Graham",
-        "volume": 50
-    })
+    res.setHeader('Content-Type', 'application/json');
+    res.send(generalSettings)
 
 
 });
 
-app.get("/YtbSettings", (req: express.Request, res: express.Response) => {
-    res.status(200)
-    res.json({
-        "appName": "Leanne Graham",
-        "volume": 50
-    })
-});
 
 app.post("/sendGeneralSettings", (req, res, next) => {
-    console.log(req.body);
-    res.status(200).json({
-      message: 'Objet créé !'
-    });
+  console.log(req.body.appName)
+const newGeneralSettings = {
+  appName:req.body.appName,
+  volume:req.body.volume,
+}
+fs.writeFile("./src/generalSettings.json",JSON.stringify(newGeneralSettings),(err: any)=>{
+  if(err){
+    console.log(err)
+  }
+  else{
+    console.log("modification du ficher json réussi !!")
+  }
+})
+    res.status(201)
+    res.send(req.body)
   });
 
 
