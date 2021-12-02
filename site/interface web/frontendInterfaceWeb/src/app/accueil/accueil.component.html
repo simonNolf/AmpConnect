@@ -12,30 +12,12 @@
     <button (click)="onPauseMusic()">
       <fa-icon [icon]="faPause"></fa-icon>
     </button>
-    <!-- <button (click)="onPlayMusic()"> --> 
-      <button (click)="onPlayMusic()"><fa-icon [icon]="faPlay"></fa-icon></button>
-      
+    <button (click)="onPlayMusic()">
+      <fa-icon [icon]="faPlay"></fa-icon>
+    </button>
     <button (click)="onForwardMusic()">
       <fa-icon [icon]="faForward"></fa-icon>
     </button>
   </div>
 </div>
-<div>
-  <div class="card-body">
-    <form ngNativeValidate (ngSubmit)="onSubmitFile(f)" #f="ngForm" id="musicInput">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputAppNameSpot">music</label>
-          <input required ngModel name="music" type="file" class="form-control" id="inputAppNameSpot"
-            placeholder="choisissez une music que vous voulez jouer">
-        </div>
-      </div>
-      <button class="btn btn-primary" type="submit">valider</button>
-    </form>
-  </div>
-  <div>
-    <input type="file" (change)="onMusicSelected($event)">
-    <button type="button" (click)="onUpload()">upload</button>
-  </div>
-
-</div>
+&

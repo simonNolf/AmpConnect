@@ -1,91 +1,82 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
-
+import { NgForm } from '@angular/forms';
+import { SettingHttpService } from '../services/settings-http.service';
 import { SettingsMenuComponent } from './settings-menu.component';
 
 describe('SettingsMenuComponent', () => {
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            imports: [ HttpClientTestingModule ]
-        })});
+    
+    let fixture: SettingsMenuComponent;
+  let httpSettingServiceMock: SettingHttpService;
+  let form:NgForm
+  const testForm = <NgForm>{
+    value: {
+        name: "Hello",
+        category: "World"
+    }
+};
+
+  beforeEach(() => {
+    fixture = new SettingsMenuComponent(
+        httpSettingServiceMock
+    );
+  });
 
     it(`should have as nomApplication is string`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        expect(typeof app.nomApplication).toBe('string');
+        let appName = fixture.nomApplication
+        expect(typeof appName).toBe('string');
     });
 
     it(`should have as volumeApplication is number`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        expect(typeof app.volumeApplication).toBe('number');
-    });
-
-    it(`should have as volumeApplication is 0`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        expect(app.volumeApplication).toEqual(0);
+        let volume = fixture.volumeApplication
+        expect(typeof volume).toBe('number');
     });
 
     it(`should have as displayYoutubeForm is false`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        expect(app.displayYoutubeForm).toBeFalsy();
+        let displayYoutube = fixture.displayYoutubeForm
+        expect(displayYoutube).toBeFalsy();
     });
 
     it(`should have as onYTForm is true when function is called`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        app.onYtForm();
-        expect(app.displayYoutubeForm).toBeTruthy();
+        fixture.onYtForm()
+        let displayYoutube = fixture.displayYoutubeForm
+        expect(displayYoutube).toBeTruthy();
     });
 
     it(`should have as displayGeneralForm is false`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        expect(app.displayGeneralForm).toBeFalsy();
+        let displayGeneral = fixture.displayGeneralForm
+        expect(displayGeneral).toBeFalsy();
     });
 
     it(`should have as onGnForm is true when function is called`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        app.onGnForm();
-        expect(app.displayGeneralForm).toBeTruthy();
+        fixture.onSubmitGeneral(testForm)
+        let displayYoutube = fixture.displayYoutubeForm
+        expect(displayYoutube).toBeFalsy();
     });
 
     it(`should have as displayDabForm is false`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        expect(app.displayDabForm).toBeFalsy();
+        let displayDab = fixture.displayDabForm
+        expect(displayDab).toBeFalsy();
     });
 
     it(`should have as onDabForm is true when function is called`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        app.onDabForm();
-        expect(app.displayDabForm).toBeTruthy();
+        fixture.onSubmitDAB(testForm)
+        let displayYoutube = fixture.displayDabForm
+        expect(displayYoutube).toBeFalsy();
     });
 
     it(`should have as onAnnulerFormYtb is false when function is called`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        app.onAnnulerFormYtb();
-        expect(app.displayYoutubeForm).toBeFalsy();
+        let annulerYoutube = fixture.onAnnulerFormYtb()
+        expect(fixture.displayYoutubeForm).toBeFalsy();
     });
 
     it(`should have as onAnnulerFormGeneral is false when function is called`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        app.onAnnulerFormGeneral();
-        expect(app.displayGeneralForm).toBeFalsy();
+        let annulerGeneral = fixture.onAnnulerFormGeneral()
+        expect(fixture.displayGeneralForm).toBeFalsy();
     });
 
     it(`should have as onAnnulerFormDab is false when function is called`, () => {
-        const fixture = TestBed.createComponent(SettingsMenuComponent);
-        const app = fixture.debugElement.componentInstance;
-        app.onAnnulerFormDab();
-        expect(app.displayDabForm).toBeFalsy();
+        let annulerDab = fixture.onAnnulerFormDab()
+        expect(fixture.displayDabForm).toBeFalsy();
     });
 
 });
