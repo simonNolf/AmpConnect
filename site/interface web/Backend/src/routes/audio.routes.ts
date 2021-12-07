@@ -12,8 +12,8 @@ AudioPlayerRouter.post("/buffer",async (req,res)=>{
     }).catch(err => Logger.error(err))
 })
 
-AudioPlayerRouter.post('/stream',(req, res) => {
-    service.playStream(req) //TODO: extract stream from request
+AudioPlayerRouter.post('/stream',async (req, res) => {
+    service.playStream(req).catch((err: Error) =>{Logger.error(err)})//TODO: extract stream from request
     res.status(400).json({
         message:"STREAMING NOT IMPLEMENTED"
     })

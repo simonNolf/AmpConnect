@@ -22,4 +22,4 @@ Module = __decorate([
     sequelize_typescript_1.Table
 ], Module);
 exports.default = Module;
-//# sourceMappingURL=modules.model.js.map
+//# sourceMappingURL=modules.classes.js.map
