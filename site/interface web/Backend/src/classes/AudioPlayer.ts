@@ -11,7 +11,7 @@ export class AudioPlayer {
     public  primaryGainNodeControl  : GainNode;
     public  playlist                : Array<Song> //TODO implement playlist
     public  audioContext            :AudioContext =new AudioContext ()
-    public  destination             : any;
+    public  destination             : AudioNode;
     private nextTime                :number =0;
     private websocket               :Socket
     constructor(socket :Socket) {
@@ -42,9 +42,9 @@ export class AudioPlayer {
         return new Song(songData, this.audioContext)
     }
     scheduleBuffer(chunk: Buffer) {
-        Logger.info("Decoding.....")
+        Logger.debug("Decoding.....")
         this.audioContext.decodeAudioData(chunk,(audioBuffer : AudioBuffer)=>{
-            Logger.info("audio Decoded")
+            Logger.debug("audio Decoded")
             const  source    = this.audioContext.createBufferSource();
             source.buffer = audioBuffer;
             source.connect(this.destination);
@@ -54,7 +54,9 @@ export class AudioPlayer {
             this.nextTime += source.buffer.duration;
         },(error :DOMException) => Logger.error(error))
     }
+    scheduleSong(){
 
+    }
     restartSong(){
 
     }
