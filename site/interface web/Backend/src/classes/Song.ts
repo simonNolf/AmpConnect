@@ -1,14 +1,28 @@
-export class Song {
-    private _songData    : Buffer
-    private _songName    : String
-    private _songArtist  : String
-    private _songAlbum   : String
+import * as mediaTags from "jsmediatags";
+import Logger from "../lib/logger";
+import {TagType} from "jsmediatags/types";
 
-    constructor(data : Buffer ,songName :string,songArtist :string,songAlbum :string) {
+export class Song {
+    private readonly _songData    : Buffer
+    private _songName             : String
+    private _songArtist           : String
+    private _songAlbum            : String
+    public  playing               : Boolean
+    private _audioBuffer          : AudioBuffer
+
+    constructor(data : Buffer ,audioContext :AudioContext) {
         this._songData = data
-        this._songName = songName
-        this._songAlbum = songAlbum
-        this._songArtist = songArtist
+        this.playing = false
+        mediaTags.read(data,{
+            onSuccess: this.setTags,
+            onError: function(error) {
+                Logger.error(':(', error.type, error.info);
+            }
+        })
+        audioContext.decodeAudioData(this.songData).then((audio)=>{
+            this._audioBuffer = audio
+        }).catch((err: Error) =>{Logger.error(err)})
+
     }
     public get songData() :Buffer
     {
@@ -26,4 +40,15 @@ export class Song {
     {
         return this._songAlbum
     }
+    private setTags (tag :TagType) {
+        this._songName = tag.tags.title
+        this._songAlbum = tag.tags.album
+        this._songArtist = tag.tags.artist
+    }
+    public get audioBuffer() :AudioBuffer
+    {
+        this.playing = true
+        return this._audioBuffer
+    }
+
 }

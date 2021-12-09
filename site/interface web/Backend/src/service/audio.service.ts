@@ -6,7 +6,7 @@ import Logger from "../lib/logger";
 import {AudioPlayer} from "../classes/AudioPlayer";
 import {socket} from "../routes/socket.routes"
 import logger from "../lib/logger";
-import * as mediatags from "jsmediatags";
+import * as mediaTags from "jsmediatags";
 
 const audioPlayer :AudioPlayer = new AudioPlayer(socket)
 
@@ -49,13 +49,6 @@ export function previousSong() {
 export function restartSong() {
     audioPlayer.restartSong()
 }
-export function addPlaylist(blob :Buffer) {
-    mediatags.read(blob,{
-            onSuccess: function(tag) {
-                audioPlayer.newSong(blob,tag.tags.title,tag.tags.artist,tag.tags.album)
-            },
-            onError: function(error) {
-                Logger.error(':(', error.type, error.info);
-            }
-        })
+export function addSongToPlaylist(blob :Buffer) {
+    audioPlayer.newSong(blob)
 }

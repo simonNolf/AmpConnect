@@ -38,9 +38,8 @@ export class AudioPlayer {
     nextSong(){
 
     }
-    newSong(songData :Buffer, songName:string ,soundArtist :string,soundAlbum :string){
-        const song = new Song(songData,songName,soundArtist,soundAlbum)
-        this.playlist.push(song)
+    newSong(songData :Buffer):Song{
+        return new Song(songData, this.audioContext)
     }
     scheduleBuffer(chunk: Buffer) {
         Logger.info("Decoding.....")
