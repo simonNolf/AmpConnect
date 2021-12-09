@@ -4,10 +4,12 @@ import Speaker from "speaker";
 // @ts-ignore
 import {AudioContext} from 'web-audio-api';
 import {Socket} from "socket.io";
+import {Song} from "./Song";
+
 export class AudioPlayer {
     private pausedTime              :Number;
     public  primaryGainNodeControl  : GainNode;
-    public  playlist                : Array<Buffer> //TODO implement playlist
+    public  playlist                : Array<Song> //TODO implement playlist
     public  audioContext            :AudioContext =new AudioContext ()
     public  destination             : any;
     private nextTime                :number =0;
@@ -36,8 +38,9 @@ export class AudioPlayer {
     nextSong(){
 
     }
-    newSong(songData :Buffer, songName:Buffer){
-
+    newSong(songData :Buffer, songName:string ,soundArtist :string,soundAlbum :string){
+        const song = new Song(songData,songName,soundArtist,soundAlbum)
+        this.playlist.push(song)
     }
     scheduleBuffer(chunk: Buffer) {
         Logger.info("Decoding.....")
