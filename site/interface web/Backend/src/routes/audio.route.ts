@@ -12,12 +12,12 @@ AudioPlayerRouter.post("/buffer",async (req,res)=>{
     }).catch(err => Logger.error(err))
 })
 
-AudioPlayerRouter.post('/stream',(req, res) => {
-    service.playStream(req) //TODO: extract stream from request
+/*AudioPlayerRouter.post('/stream',(req, res) => {
+    service.playStream(req)
     res.status(400).json({
         message:"STREAMING NOT IMPLEMENTED"
     })
-})
+})*/
 
 AudioPlayerRouter.post('/file',async (req,res)=>{
     const form = formidable()

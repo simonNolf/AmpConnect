@@ -1,6 +1,25 @@
-
+import http from "http";
+import {AddressInfo} from "net";
+import {server, ioServ} from "../../src/server";
 var request = require('supertest');
-var server = require("../src/server")
+
+let httpServer :http.Server;
+let httpServerAddress:String | AddressInfo;
+
+beforeAll((done) => {
+  httpServer = server
+  httpServerAddress = server.address()
+  done();
+});
+
+/**
+ *  Cleanup WS & HTTP servers
+ */
+afterAll((done) => {
+  httpServer.close();
+  done();
+});
+
 
 describe('test API /', function () {
 

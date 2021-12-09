@@ -1,37 +1,46 @@
-import {Stream} from "stream";
-import fs from "fs";
+import {pipeline, Stream} from "stream";
 // @ts-ignore
-
 import Speaker from 'speaker'
+import fs from "fs";
 import Logger from "../lib/logger";
 import {AudioPlayer} from "../classes/AudioPlayer";
+import {Request} from "express";
+import {socket} from "../routes/socket.routes"
 
-const audioPlayer :AudioPlayer = new AudioPlayer()
+const audioPlayer :AudioPlayer = new AudioPlayer(socket)
 
 
 export async function playFile (filepath :string){
     const buffer :Buffer= fs.readFileSync(filepath)
-    await playBuffer(buffer).catch(err=>{Logger.error(err)})
+    audioPlayer.scheduleBuffer(buffer)
 }
 export async function playBuffer (soundBuffer :Buffer){
-    await audioPlayer.audioContext.decodeAudioData(soundBuffer,(audioBuffer :AudioBuffer)=>{
-        const audioSource: AudioBufferSourceNode = audioPlayer.audioContext.createBufferSource()
-        audioSource.buffer= audioBuffer
-        audioSource.connect(audioPlayer.primaryGainNodeControl)
-        audioSource.start(0)
-        Logger.info("now playing")
-    }, (error :DOMException) => Logger.error(error))
-
-}
-export async function playStream (stream :Stream) {
-    //TODO: convert + read Audio stream
-    Logger.info("not implemented")
+    audioPlayer.scheduleBuffer(soundBuffer)
 }
 
-
+export function nextBuffer(chunk :Buffer) {
+    audioPlayer.scheduleBuffer(chunk)
+}
 export function resume() {
     audioPlayer.resume()
 }
 export function pause() {
     audioPlayer.pause()
+}
+
+export function nextSong() {
+    audioPlayer.nextSong()
+}
+
+export function cleanPlaylist (){
+    audioPlayer.cleanPlaylist()
+}
+
+export function previousSong() {
+    audioPlayer.previousSong()
+}
+
+
+export function restartSong() {
+    audioPlayer.restartSong()
 }

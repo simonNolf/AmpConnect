@@ -3,12 +3,16 @@ import path from "path";
 import morganMiddleware from "./config/morganMiddleware";
 import Logger from "./lib/logger";
 import bodyParser from "body-parser";
-import formidable from "formidable";
+import {createServer} from "http";
 import {AudioRouter} from "./routes/audio.route";
+import {Server} from "socket.io";
+import {socketRouter} from "./routes/socket.routes";
 
 // default port to listen
 const app = express();
 const port = 8080;
+export const server = createServer(app)
+export const ioServ =new Server(server)
 app.use(bodyParser.json());
 app.use(morganMiddleware)
 // define a route handler for the default home page
@@ -19,13 +23,14 @@ app.get("/index", (req: express.Request, res: express.Response) => {
     res.sendFile(path.join(__dirname, "../../frontendInterfaceWeb/dist/frontendInterfaceWeb/index.html"))
 
 });
+ioServ.on('connection',socketRouter)
 app.get("/api", (req: express.Request, res: express.Response) => {
     Logger.debug("api")
     res.sendStatus(200);
 
 })
 // start the Express server
-app.listen(port, async () => {
+server.listen(port, async () => {
     try {
         Logger.info('Connection has been established successfully.');
     } catch (error) {
