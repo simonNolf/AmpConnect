@@ -1,4 +1,4 @@
-name: angularUnitTest
+name: angular Unit Test (jest)
 on: [push]
 jobs:
   build:
@@ -9,14 +9,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '14.x'
-    - name: List files in the repository
+    - name: Install dependencies + launch jest test
       run: |
+        cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
           npm install -g @angular/cli
-    - name: List files in the repository
-      run: |
           npm install
-    - name: List files in the repository
-      run: |
           npm run test
-    
-

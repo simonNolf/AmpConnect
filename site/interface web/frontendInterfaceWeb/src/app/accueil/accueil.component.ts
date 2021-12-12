@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faPause } from '@fortawesome/free-solid-svg-icons';
 import { faBackward } from '@fortawesome/free-solid-svg-icons';
 import { faForward } from '@fortawesome/free-solid-svg-icons';
 import { HttpService } from '../service/http.service';
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-accueil',
@@ -13,29 +13,21 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-  selectedFile: any = null
+
   faPlay = faPlay;
   faPause = faPause;
   faForward = faForward
   faBackward = faBackward
   list = [] as any
-  Titre: string = "ceci est le titre de la musique";
+  Title: string = "ceci est le titre de la musique";
   time: number = 0;
   musicPlaying : boolean = false
   audio = new Audio()
 
-  msaapDisplayTitle = true;
-msaapDisplayPlayList = true;
-msaapPageSizeOptions = [2,4,6];
-msaapDisplayVolumeControls = true;
-msaapDisplayRepeatControls = true;
-msaapDisplayArtist = false;
-msaapDisplayDuration = false;
-msaapDisablePositionSlider = true;
 
 
 
-  constructor(private HttpService: HttpService,private http:HttpClient) {}
+  constructor(private HttpService: HttpService) {}
 
 
   ngOnInit(): void {
@@ -49,8 +41,7 @@ msaapDisablePositionSlider = true;
   }
 
   getTitle() {
-    console.log(this.Titre);
-    return this.Titre;
+    return this.Title;
   }
 
   getTime() {
@@ -94,25 +85,6 @@ msaapDisablePositionSlider = true;
     })
 
     console.log("onForwardMusic")
-  }
-
-  onSubmitFile(form : NgForm){
-console.log("test")
-  }
-
-  onMusicSelected(event: any){
-    this.selectedFile = <File>event.target.files[0];
-    console.log(this.selectedFile)
-  }
-
-  onUpload(){
-    console.log('test')
-    const fd = new FormData();
-    fd.append('sound',this.selectedFile,this.selectedFile.name)
-    console.log(fd)
-    this.http.post<any>("/audio/play",fd).subscribe(res =>{
-      console.log(res)
-    })
   }
 
 }
