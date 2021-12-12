@@ -8,24 +8,19 @@ export class Song extends EventEmitter{
     private _songName             : String | null
     private _songArtist           : String | null
     private _songAlbum            : String | null
-    public  playing               : Boolean
-    private _audioBuffer          : AudioBuffer
-    private _duration            : number
+    public readonly audioBuffer   : AudioBuffer
+    private _duration             : number
 
-    constructor(data : Buffer ,audioContext :AudioContext) {
+    constructor(data : Buffer ,audioBuffer :AudioBuffer) {
         super();
         this._songData = data
-        this.playing = false
+        this.audioBuffer = audioBuffer
         mediaTags.read(data,{
             onSuccess: this.setTags,
             onError: function(error) {
                 Logger.error(':(', error.type, error.info);
             }
         })
-        audioContext.decodeAudioData(this.songData).then((audio)=>{
-            this._audioBuffer = audio
-        }).catch((err: Error) =>{Logger.error(err)})
-
     }
     public get songData() :Buffer
     {
@@ -47,20 +42,11 @@ export class Song extends EventEmitter{
         this._songName      = tag.tags.title
         this._songAlbum     = tag.tags.album
         this._songArtist    = tag.tags.artist
-        this._duration      = this._audioBuffer.duration
-    }
-    public get audioBuffer() :AudioBuffer
-    {
-        return this._audioBuffer
+        this._duration      = this.audioBuffer.duration
+        this.emit("ready")
     }
     public get duration () :number{
         return this._duration
     }
-    public play():Song{
-        this.playing = true
-        setTimeout(()=>{
-            this.emit("songEnded",this)
-        },this.duration)
-        return this
-    }
+
 }
