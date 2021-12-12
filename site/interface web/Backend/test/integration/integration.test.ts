@@ -1,6 +1,6 @@
 import http from "http";
 import {AddressInfo} from "net";
-import {server, ioServ} from "../../src/server";
+import {server} from "../../src/server";
 var request = require('supertest');
 
 let httpServer :http.Server;
@@ -20,61 +20,82 @@ afterAll((done) => {
   done();
 });
 
+describe('test d\'intégration GET', function () {
 
-describe('test API /', function () {
+  describe('test des routes', function () {
 
-  it('responds to / GET', function httpAudioPlay(done) {
-      request(server)
-          .get('/audio/play')
-          .expect(201, done);
-  });
+    for(let i = 0;i<5;i++){
+      it('should return a 200 status code', async () => {
+        const response = await request(server).get('/audio/play');
+        expect(response.statusCode).toBe(200);
+      });
 
-  it('responds to / GET', function httpAudioPlay(done) {
-    request(server)
-        .get('/audio/pause')
-        .expect(201, done);
-  });
+      it('should return a 200 status code', async () => {
+        const response = await request(server).get('/audio/backward');
+        expect(response.statusCode).toBe(200);
+      });
 
-  it('responds to / GET', function httpAudioPlay(done) {
-    request(server)
-        .get('/audio/forward')
-        .expect(201, done);
-  });
+      it('should return a 200 status code', async () => {
+        const response = await request(server).get('/audio/pause');
+        expect(response.statusCode).toBe(200);
+      });
 
-  it('responds to / GET', function httpAudioPlay(done) {
-    request(server)
-        .get('/audio/backward')
-        .expect(201, done);
-  });
+      it('should return a 200 status code', async () => {
+        const response = await request(server).get('/audio/forward');
+        expect(response.statusCode).toBe(200);
+      });
 
-  it('responds to / GET', function httpAudioPlay(done) {
-    request(server)
-        .get('/audio/time')
-        .expect(201, done);
-  });
 
-  it('responds to / GET', function httpAudioPlay(done) {
-    request(server)
-        .get('/audio/title')
-        .expect(201, done);
-  });
+      it('should return a 200 status code', async () => {
+        const response = await request(server).get('/api');
+        expect(response.statusCode).toBe(200);
+      });
+    }
+  })
 
-  it('responds to / GET', function httpAudioPlay(done) {
-    request(server)
-        .get('/sendYoutubeSettings')
-        .expect(201, done);
-  });
+  describe('test post general settings data POST',  ()=> {
+    for(let i = 0;i<5;i++){
+      it('should return a 200 status code', async () => {
+        await request(server)
+            .post('/sendGeneralSettings')
+            .send(
+                {
+                  "appName": "Nostra Hmidus Application",
+                  "volume": 100
+                }
+            )
+            .expect(201).then((response: any)=>{
+              expect(response.body).toEqual(
+                  expect.objectContaining(
+                      {
+                        "appName": "Nostra Hmidus Application",
+                        "volume": 100
+                      }
+                  )
+              )
+            });
 
-  it('responds to / GET', function httpAudioPlay(done) {
-    request(server)
-        .get('/sendDabSettings')
-        .expect(201, done);
-  });
+      });
+    }})
 
-  it('responds to / GET', function httpAudioPlay(done) {
-    request(server)
-        .get('/sendGeneralSettings')
-        .expect(201, done);
-  });
+  describe('test get general settings data GET',  ()=> {
+    for(let i = 0;i<5;i++){
+      it('should return a 200 status code', async () => {
+        const response = await request(server).get('/GeneralSettings');
+        expect(response.statusCode).toBe(200);
+      });
+
+      it('should return a 200 status code', async () => {
+        const response = await request(server).get('/GeneralSettings');
+        console.log(response.body)
+        expect(response.body).toStrictEqual(
+            {
+              "appName": "Nostra Hmidus Application",
+              "volume": 100
+            }
+        )
+      });
+    }})
+
 
 })

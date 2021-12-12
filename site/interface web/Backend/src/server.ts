@@ -2,9 +2,6 @@ import express from "express";
 import path from "path";
 import morganMiddleware from "./config/morganMiddleware";
 import Logger from "./lib/logger";
-
-import sequelize from "./config/DataBase.config";
-import Module from "./model/modules.model";
 import generalSettings from "./generalSettings.json"
 const fs = require('fs')
 
@@ -59,7 +56,7 @@ app.get("/GeneralSettings", (req: express.Request, res: express.Response) => {
 
 });
 
-app.post("/sendGeneralSettings", (req, res, next) => {
+app.post("/sendGeneralSettings", (req, res) => {
   console.log(req.body.appName)
 const newGeneralSettings = {
   appName:req.body.appName,
@@ -80,7 +77,7 @@ fs.writeFile("./src/generalSettings.json",JSON.stringify(newGeneralSettings),(er
 
   /** AUDIO */
 
-app.get("/audio/play", (req, res, next) => {
+app.get("/audio/play", (req, res,) => {
     console.log(req.body);
 
     res.status(200).json({
