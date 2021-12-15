@@ -1,1 +1,23 @@
 <p>accueil works!</p>
+<div class="card text-center">
+  <div class="card-header">
+    <h5 class="card-title">Audio player</h5>
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{ getTitle() }}</p>
+    <p class="card-text">{{ getTime() }}</p>
+    <button (click)="onBackMusic()">
+      <fa-icon [icon]="faBackward"></fa-icon>
+    </button>
+    <button (click)="onPauseMusic()">
+      <fa-icon [icon]="faPause"></fa-icon>
+    </button>
+    <button (click)="onPlayMusic()">
+      <fa-icon [icon]="faPlay"></fa-icon>
+    </button>
+    <button (click)="onForwardMusic()">
+      <fa-icon [icon]="faForward"></fa-icon>
+    </button>
+  </div>
+</div>
+&

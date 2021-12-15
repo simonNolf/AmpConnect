@@ -1,25 +1,23 @@
+import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { AccueilComponent } from './accueil.component';
 
-describe('AccueilComponent', () => {
-  let component: AccueilComponent;
-  let fixture: ComponentFixture<AccueilComponent>;
+import {HttpClientModule} from '@angular/common/http';
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AccueilComponent ]
-    })
-    .compileComponents();
-  });
+describe('AccueilComponent', () => {
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AccueilComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    TestBed.configureTestingModule({
+        imports: [ HttpClientTestingModule ]
+    })});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should have as title ceci est le titre de la musique', () => {
+    const fixture = TestBed.createComponent(AccueilComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.getTitle()).toEqual('ceci est le titre de la musique');
+  })
+
 });

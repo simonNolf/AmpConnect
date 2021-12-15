@@ -1,0 +1,191 @@
+##################### TESTING COMPONENT APPCOMPONENT ###########################
+
+let component: ConnexionStreamingComponent;
+  let fixture: ComponentFixture<ConnexionStreamingComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ConnexionStreamingComponent ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ConnexionStreamingComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  ##################### TESTING COMPONENT APPCOMPONENT ###########################
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule
+      ],
+      declarations: [
+        AppComponent
+      ],
+    }).compileComponents();
+  });
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it(`should have as title 'frontendInterfaceWeb'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('frontendInterfaceWeb');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.content span')?.textContent).toContain('frontendInterfaceWeb app is running!');
+  });
+
+
+##################### TESTING COMPONENT HELP ###########################
+
+let component: HelpComponent;
+  let fixture: ComponentFixture<HelpComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ HelpComponent ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(HelpComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+##################### TESTING service HTTP ###########################
+
+let service: HttpService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(HttpService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+##################### TESTING SERVICE DATA-SELECTION ###########################
+
+let service: DataSelectionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(DataSelectionService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+##################### TESTING SERVICE SETTINGS HTTP ###########################
+
+let service: SettingHttpService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(SettingHttpService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+##################### TESTING COMPONENT ACCUEIL ###########################
+
+let component: AccueilComponent;
+  let fixture: ComponentFixture<AccueilComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ AccueilComponent ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AccueilComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+##################### TESTING APPCOMPONENT ( site vitrine ) ###########################
+
+beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule
+      ],
+      declarations: [
+        AppComponent
+      ],
+    }).compileComponents();
+  });
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it(`should have as title 'Frontend'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('Frontend');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Frontend app is running!');
+  });
+
+
+##################### TESTING SETTINGS MENU ###########################
+  let component: SettingsMenuComponent;
+  let fixture: ComponentFixture<SettingsMenuComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ SettingsMenuComponent ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(SettingsMenuComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
