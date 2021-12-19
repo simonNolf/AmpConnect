@@ -28,7 +28,7 @@ public class LocalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_local, container, false);
 
-        play = (Button) rootView.findViewById(R.id.playBtn);
+        play = rootView.findViewById(R.id.playBtn);
         seekBar = rootView.findViewById(R.id.positionBar);
         handler = new Handler();
         mediaplayer = new MediaPlayer();
@@ -64,6 +64,9 @@ public class LocalFragment extends Fragment {
                 i++;
                 if(i==2) {
                     i = 0;
+                }
+                if(i % 2 == 1){
+                    sound.pause();
                 }
 
 
