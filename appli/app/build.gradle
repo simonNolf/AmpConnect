@@ -15,7 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField("String","YOUTUBE_API_KEY", '"AIzaSyCnh5Rlt5hSLuMbzCrAHPiSDtsFFVIFOAY"')
+        buildConfigField("String","YOUTUBE_API_KEY", '"YOUTUBEAPIKEY"')
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

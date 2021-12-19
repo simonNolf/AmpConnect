@@ -34,7 +34,7 @@ class YtbViewModel : ViewModel() {
             .getVideo(
                 "snippet",
                 "25",
-                "enemy",
+                "music",
                 nextPageToken,
                 querySearch
             )
