@@ -2,10 +2,10 @@ package com.example.youtubeapikotlin.ui.local;
 
 
 import android.annotation.SuppressLint;
-import android.icu.util.ICUUncheckedIOException;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,9 +31,10 @@ public class LocalFragment extends Fragment {
     ImageView image;
     SeekBar seekBar;
     MediaPlayer mediaplayer;
-    Handler handler = new Handler();
+
     Runnable runnable;
     MediaPlayer sound;
+
     int[] images = {R.drawable.play, R.drawable.pause};
     int i = 0;
     int currentIndex = 0;
@@ -47,56 +48,30 @@ public class LocalFragment extends Fragment {
         image = rootView.findViewById(R.id.image);
         seekBar = rootView.findViewById(R.id.positionBar);
         mediaplayer = new MediaPlayer();
+
         playerposition = rootView.findViewById(R.id.elapsedTimeLabel);
         playerDuration = rootView.findViewById(R.id.remainingTimeLabel);
         titre = rootView.findViewById(R.id.titre);
         ArrayList<Integer> songs = new ArrayList<>();
 
-        songs.add(0,R.raw.song);
+        songs.add(0, R.raw.song);
         songs.add(1, R.raw.thunder);
-        songs.add(2,R.raw.enemy);
+        songs.add(2, R.raw.enemy);
         sound = MediaPlayer.create(getActivity(), songs.get(currentIndex));
-        runnable = new Runnable() {
-            @Override
-            public void run() {
-                seekBar.setProgress(sound.getCurrentPosition());
-                handler.postDelayed(this, 500);
 
-            }
-        };
+
         int duration = sound.getDuration();
         String sDuration = convertFormat(duration);
         playerDuration.setText(sDuration);
 
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (fromUser) {
-                    mediaplayer.seekTo(progress);
-                }
-                playerposition.setText(convertFormat(sound.getCurrentPosition()));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-
-
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                seekBar.setMax(sound.getDuration());
                 int currentPosition = sound.getCurrentPosition();
                 int duration = sound.getDuration();
-                if(sound.isPlaying() &&  duration != currentPosition){
-                    currentPosition = currentPosition + 5000;
+                if (sound.isPlaying() && duration != currentPosition) {
+                    currentPosition = currentPosition + 1;
                     playerposition.setText(convertFormat(currentPosition));
                     sound.seekTo(currentPosition);
                 }
@@ -121,20 +96,19 @@ public class LocalFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(sound!=null){
+                if (sound != null) {
                     play.setBackgroundResource(images[1]);
                     i = 0;
                 }
-                if(currentIndex < songs.size() - 1){
-                    currentIndex ++;
-                }else
-                {
+                if (currentIndex < songs.size() - 1) {
+                    currentIndex++;
+                } else {
                     currentIndex = 0;
                 }
-                if (sound.isPlaying()){
+                if (sound.isPlaying()) {
                     sound.stop();
                 }
-                sound = MediaPlayer.create(getActivity(),songs.get(currentIndex));
+                sound = MediaPlayer.create(getActivity(), songs.get(currentIndex));
                 sound.start();
                 songNames();
 
@@ -143,19 +117,19 @@ public class LocalFragment extends Fragment {
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sound!=null){
+                if (sound != null) {
                     play.setBackgroundResource(images[1]);
                     i = 0;
                 }
-                if (currentIndex>0){
+                if (currentIndex > 0) {
                     currentIndex--;
-                }else{
-                    currentIndex = songs.size() -1;
+                } else {
+                    currentIndex = songs.size() - 1;
                 }
-                if (sound.isPlaying()){
+                if (sound.isPlaying()) {
                     sound.stop();
                 }
-                sound = MediaPlayer.create(getActivity(),songs.get(currentIndex));
+                sound = MediaPlayer.create(getActivity(), songs.get(currentIndex));
                 sound.start();
                 songNames();
             }
@@ -170,22 +144,76 @@ public class LocalFragment extends Fragment {
     private String convertFormat(int duration) {
         return String.format("%02d:%02d",
                 TimeUnit.MILLISECONDS.toMinutes(duration),
-                 TimeUnit.MILLISECONDS.toSeconds(duration)
-                         - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration)));
+                TimeUnit.MILLISECONDS.toSeconds(duration)
+                        - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration)));
     }
 
-    private void songNames(){
-        if (currentIndex == 0){
-             titre.setText("test");
-             image.setImageResource(R.drawable.sablier);
+    private void songNames() {
+        if (currentIndex == 0) {
+            titre.setText("test");
+            image.setImageResource(R.drawable.sablier);
         }
-        if (currentIndex == 1){
+        if (currentIndex == 1) {
             titre.setText("imagine Dragon - Thunder");
             image.setImageResource(R.drawable.thunder);
         }
-        if (currentIndex == 2){
+        if (currentIndex == 2) {
             titre.setText("imagine Dragon - Enemy");
             image.setImageResource(R.drawable.enemy);
         }
+        sound.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                seekBar.setMax(sound.getDuration());
+                sound.start();
+            }
+        });
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser) {
+                    sound.seekTo(progress);
+                    seekBar.setProgress(progress);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (sound != null) {
+                    try {
+                        if (sound.isPlaying()) {
+                            Message message = new Message();
+                            message.what = sound.getCurrentPosition();
+                            handler.sendMessage(message);
+                            Thread.sleep(1000);
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
+
     }
+
+    @SuppressLint("Handler Leak")
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            seekBar.setProgress(msg.what);
+        }
+    };
+
+
 }
