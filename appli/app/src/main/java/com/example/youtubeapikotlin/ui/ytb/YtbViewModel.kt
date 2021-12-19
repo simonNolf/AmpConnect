@@ -33,11 +33,20 @@ class YtbViewModel : ViewModel() {
             .getServices()
             .getVideo(
                 "snippet",
-                "UCEnFzIYw3BrndPCddyQ6c5A",
-                "date",
+                "25",
+                "enemy",
                 nextPageToken,
                 querySearch
             )
+
+         //.getVideo(
+         //                "snippet",
+         //                "UCEnFzIYw3BrndPCddyQ6c5A",
+         //                "date",
+         //                nextPageToken,
+         //                querySearch
+         //            )
+
         client.enqueue(object : Callback<VideoYtModel> {
             override fun onResponse(call: Call<VideoYtModel>, response: Response<VideoYtModel>) {
                 _isLoading.value = false
