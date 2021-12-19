@@ -12,12 +12,6 @@
         tools:layout="@layout/fragment_youtube" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.youtubeapikotlin.ui.dashboard.DashboardFragment"
-        android:label="@string/title_playlist"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.youtubeapikotlin.ui.local.LocalFragment"
         android:label="Music Local"
