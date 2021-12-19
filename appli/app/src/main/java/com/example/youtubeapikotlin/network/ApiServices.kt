@@ -20,9 +20,23 @@ interface ApiServices {
     fun getVideo(
         @Query("part") part: String,
         //a ptt modif pour l'id de la vidéo ! A VOIR
-        @Query("channelId") channelId: String,
-        @Query("order") order: String,
+        @Query("maxResults") maxResults: String,
+        @Query("q") q: String,
         @Query("pageToken") pageToken: String?,
         @Query("q") query : String?
     ): Call<VideoYtModel>
+
+
+
+
+
+    //@GET("search")
+    //fun getVideo(
+    //@Query("part") part: String,
+        //a ptt modif pour l'id de la vidéo ! A VOIR
+    //    @Query("channelId") channelId: String,
+    //   @Query("order") order: String,
+    //    @Query("pageToken") pageToken: String?,
+    //   @Query("q") query : String?
+    // ): Call<VideoYtModel>
 }
