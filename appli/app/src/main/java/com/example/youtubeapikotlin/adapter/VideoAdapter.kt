@@ -22,7 +22,6 @@ class VideoAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
             binding.root.setOnClickListener {
                 val i = Intent(it.context, PlayerActivity::class.java)
-
                 i.putExtra("video_title", data.snippetYtb.title)
                 i.putExtra("video_description", data.snippetYtb.description)
                 it.context.startActivity(i)
