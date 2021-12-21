@@ -15,7 +15,6 @@ jobs:
       - run: cd ${{ github.workspace}}/site/"site vitrine"/Frontend
       - run: npm install -g @angular/cli
       - run: npm install
-      - run: ng build
       - run: npm run test
       - run: npm publish --access public
         env:
