@@ -11,12 +11,13 @@
   #titre{
     margin: 1%;
     text-align: center;
+    color: white;
   }
   
   #slider {
     position: relative;
-    width: 25%;
-    height: 16vw;
+    width: 15%;
+    height: 30vw;
     margin: 30px auto 5% auto;
     font-family: 'Helvetica Neue', sans-serif;
     perspective: 1400px;
@@ -63,7 +64,7 @@
 
 #slider1:checked ~ #slide1,
  #slider2:checked ~ #slide2,
-  #slider3:checked ~ #slide3,
+  #slider3:checked ~ #slide3, 
    #slider4:checked ~ #slide4,
     #slider5:checked ~ #slide5 {
   box-shadow: 0 13px 26px rgba(0,0,0, 0.3), 0 12px 6px rgba(0,0,0, 0.2);
@@ -76,7 +77,7 @@
    #slider4:checked ~ #slide5,
     #slider5:checked ~ #slide1 {
   box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
-  transform: translate3d(20%, 0, -100px);
+  transform: translate3d(40%, 0, -100px);
 }
 
 #slider1:checked ~ #slide3,
@@ -85,7 +86,7 @@
    #slider4:checked ~ #slide1,
     #slider5:checked ~ #slide2 {
   box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
-  transform: translate3d(40%, 0, -250px);
+  transform: translate3d(60%, 0, -250px);
 }
 
 #slider1:checked ~ #slide5,
@@ -94,7 +95,7 @@
    #slider4:checked ~ #slide3,
     #slider5:checked ~ #slide4 {
   box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
-  transform: translate3d(-20%, 0, -100px);
+  transform: translate3d(-40%, 0, -100px);
 }
 
 #slider1:checked ~ #slide4,
@@ -103,7 +104,7 @@
    #slider4:checked ~ #slide2,
     #slider5:checked ~ #slide3 {
   box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
-  transform: translate3d(-40%, 0, -250px);
+  transform: translate3d(-60%, 0, -250px);
 }
 #smartphoneImg{
   width: 25%;
@@ -111,16 +112,35 @@
   margin-left: 15%;
 }
 #TitreDesc{
+  color: white;
   float: right;
   margin: 5%;
   width: 50%;
 }
 .AppSmartphone{
-  border: solid;
-  border-radius: 10px;
+  border: none;
   border-color: rgba(0,0,0,0.1);
   padding: 10px;
   text-align: center;
   width: 75%;
-  background: rgba(0,0,0,0.1);
+  background: rgba(255, 247, 247, 0.1);
 }
+#TitreDesc a{
+  text-decoration: none;
+}
+#Telecharger{
+  display: block;
+  color :var(--secondary-color);
+  background-color: white;
+  border: none;
+  margin: 0 30%;
+  
+  border-radius: 15px;
+  height: 2vw;
+  width: 8vw;
+}
+#Telecharger:hover{
+  background-color: var(--primary-color);
+  color: white;
+}
+

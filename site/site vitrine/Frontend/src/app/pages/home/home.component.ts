@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title = "Give A Seconde Life To Your Old Speakers";
-  title2 ="We're";
-  title3 = "Launching";
-  title4 = "Soon"
+  title = "Donne une seconde vie à ton ancien Ampli";
+  title2 ="Bientôt";
+  title3 = "Disponible,";
+  title4 = "reviens dans"
+
   //les variables du countDown
   days = 0;
   hours = 0;
@@ -23,9 +24,8 @@ export class HomeComponent implements OnInit {
     this.countDown;
   }
 
-  //Creative Developer -- chaine youtube tuto --
   countDown = setInterval(()=>{
-      const countDate = new Date("Dec 23, 2021 12:00:00").getTime();
+      const countDate = new Date("Dec 23, 2021 13:00:00").getTime();
       const currentDate = new Date().getTime();
       var gap = countDate - currentDate;
 
