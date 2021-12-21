@@ -1,13 +1,12 @@
 h2{
-    text-decoration: underline;
     font-size: 2vw;
+    color : white;
 }
 p{
     font-size: 1vw;
     font-family:'Times New Roman', Times, serif;
 }
 #ContenuContact{
-    background-color: red;
     width: 75%;
     margin: 5% auto;
 }
@@ -17,6 +16,10 @@ p{
 }
 #TextContact{
     float: right;
-    width: 30%;
-    margin: 10vw auto;
+    width: 25%;
+    margin: 7vw auto;
+    color: white;
+}
+#JoinDiscord{
+    width: 15%;
 }

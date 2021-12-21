@@ -62,16 +62,16 @@
   text-transform: uppercase;
 }
 .banner .countdownBx .countdown div#day:before{
-  content: "days";
+  content: "jour(s)";
 }
 .banner .countdownBx .countdown div#hour:before{
-  content: "hours";
+  content: "heure(s)";
 }
 .banner .countdownBx .countdown div#minutes:before{
-  content: "minutes";
+  content: "minute(s)";
 }
 .banner .countdownBx .countdown div#seconds:before{
-  content: "seconds";
+  content: "seconde(s)";
 }
 .banner .countdownBx .countdown div#seconds,
 .banner .countdownBx .countdown div#seconds:before{
