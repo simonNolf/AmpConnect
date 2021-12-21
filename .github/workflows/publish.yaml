@@ -12,7 +12,7 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org/
       - run: |
-        cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
+        cd ${{ github.workspace}}/site/"site vitrine"/Frontend
          npm install 
          npm run build
         npm run test
