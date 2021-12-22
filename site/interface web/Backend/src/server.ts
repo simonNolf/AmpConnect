@@ -44,17 +44,15 @@ app.listen(port, async () => {
 
 });
 
-/** SETTINGS */
 
 
 
 app.get("/GeneralSettings", (req: express.Request, res: express.Response) => {
-    res.status(200)
-    res.setHeader('Content-Type', 'application/json');
-    res.send(generalSettings)
+  res.status(200)
+  res.setHeader('Content-Type', 'application/json');
+  res.send(generalSettings)
 
 
-});
 
 
 app.post("/sendGeneralSettings", (req, res, next) => {

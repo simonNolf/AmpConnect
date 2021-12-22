@@ -18,7 +18,6 @@ import { CommonModule } from '@angular/common';
 
 import { SettingHttpService } from './services/settings-http.service';
 
-
 import { HttpService } from './service/http.service';
 
 
