@@ -50,6 +50,8 @@ export class SettingsMenuComponent implements OnInit {
   }
 
 
+  sendSubmitedGeneralData(form:NgForm){
+
     this.HttpService.addGeneralSettings(form.value).subscribe(data => {
         this.HttpService.getGeneralSettings().subscribe(data => {
         this.nomApplication= data.appName
