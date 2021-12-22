@@ -105,3 +105,8 @@
   padding: 5px 5px;
   border-radius: 5px;
 }
+#video{
+  margin: 2%;
+  height: 42vh;
+  width: 40%;
+}
