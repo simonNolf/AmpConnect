@@ -70,7 +70,6 @@ describe('test d\'intégration GET', function () {
 
     it('should return a 200 status code', async () => {
       const response = await request(server).get('/GeneralSettings');
-      console.log(response.body)
       expect(response.body).toStrictEqual(
         {
           "appName": "Nostra Hmidus Application",

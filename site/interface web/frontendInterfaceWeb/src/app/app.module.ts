@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
 import { SettingHttpService } from './services/settings-http.service';
 
 import { HttpService } from './service/http.service';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
@@ -41,7 +41,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     CommonModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [

@@ -55,3 +55,6 @@ i{
 .help{
   display: flex;
 }
+input.ng-invalid{
+  border: 5px solid red
+}
