@@ -52,3 +52,6 @@ i{
   height: 100px;
 }
 
+.help{
+  display: flex;
+}

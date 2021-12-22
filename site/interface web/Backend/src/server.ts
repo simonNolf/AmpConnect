@@ -52,7 +52,7 @@ app.get("/GeneralSettings", (req: express.Request, res: express.Response) => {
   res.setHeader('Content-Type', 'application/json');
   res.send(generalSettings)
 
-
+});
 
 
 app.post("/sendGeneralSettings", (req, res, next) => {

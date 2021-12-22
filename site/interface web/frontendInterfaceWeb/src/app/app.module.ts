@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SettingsMenuComponent } from './settings-menu/settings-menu.component';
-import { ConnexionStreamingComponent } from './connexion-streaming/connexion-streaming.component';
 import { HelpComponent } from './help/help.component';
 import { FormsModule }   from '@angular/forms';
 import { Routes } from '@angular/router';
@@ -24,7 +23,6 @@ import { HttpService } from './service/http.service';
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'settings', component: SettingsMenuComponent },
-  { path: 'connection', component: ConnexionStreamingComponent },
   { path: 'help', component: HelpComponent }
 ];
 
@@ -32,7 +30,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SettingsMenuComponent,
-    ConnexionStreamingComponent,
     HelpComponent,
     AccueilComponent,
     
