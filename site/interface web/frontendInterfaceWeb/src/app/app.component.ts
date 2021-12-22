@@ -9,7 +9,12 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontendInterfaceWeb';
-  faCoffee = faCoffee;
-  faCog=faCog;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  public title = 'frontendInterfaceWeb';
+  public faCoffee = faCoffee;
+  public faCog=faCog;
 }

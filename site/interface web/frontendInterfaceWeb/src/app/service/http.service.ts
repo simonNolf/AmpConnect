@@ -18,7 +18,7 @@ export class HttpService {
 
   getPlayEvent():Observable<User[]>{
 
-    return this.http.get<User[]>("../assets/Users.json")
+    return this.http.get<User[]>("/audio/play")
   }
 
   getPauseEvent():Observable<User[]>{
@@ -28,7 +28,7 @@ export class HttpService {
 
   getForwardEvent():Observable<User[]>{
 
-    return this.http.get<User[]>("/audio/farward")
+    return this.http.get<User[]>("/audio/forward")
   }
 
   getBackwardEvent():Observable<User[]>{

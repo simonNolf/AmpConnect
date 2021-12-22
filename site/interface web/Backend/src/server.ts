@@ -46,30 +46,76 @@ app.listen(port, async () => {
 
 
 
+
 app.get("/GeneralSettings", (req: express.Request, res: express.Response) => {
   res.status(200)
   res.setHeader('Content-Type', 'application/json');
   res.send(generalSettings)
 
 
-});
 
 
 app.post("/sendGeneralSettings", (req, res, next) => {
-console.log(req.body.appName)
+  console.log(req.body.appName)
 const newGeneralSettings = {
-appName:req.body.appName,
-volume:req.body.volume,
+  appName:req.body.appName,
+  volume:req.body.volume,
 }
 fs.writeFile("./src/generalSettings.json",JSON.stringify(newGeneralSettings),(err: any)=>{
-if(err){
-  console.log(err)
-}
-else{
-  console.log("modification du ficher json réussi !!")
-}
+  if(err){
+    console.log(err)
+  }
+  else{
+    console.log("modification du ficher json réussi !!")
+  }
 })
-  res.status(201)
-  res.send(req.body)
+    res.status(201)
+    res.send(req.body)
+  });
+
+
+  /** AUDIO */
+
+app.get("/audio/play", (req, res, next) => {
+    console.log(req.body);
+    res.status(200).json({
+      message: ' PLAY '
+    });
+  });
+
+app.get("/audio/pause", (req, res, next) => {
+    console.log(req.body);
+    res.status(200).json({
+      message: ' PAUSE '
+    });
+  });
+
+app.get("/audio/forward", (req, res, next) => {
+    console.log(req.body);
+    res.status(200).json({
+      message: ' FORWARD '
+    });
 });
 
+app.get("/audio/backward", (req, res, next) => {
+    console.log(req.body);
+    res.status(200).json({
+      message: ' BACKWARD '
+    });
+});
+
+app.get("/audio/title", (req, res, next) => {
+    console.log(req.body);
+    res.status(200).json({
+      message: ' TITLE '
+    });
+});
+
+app.get("/audio/time", (req, res, next) => {
+    console.log(req.body);
+    res.status(20).json({
+      message: ' TIME '
+    });
+});
+
+module.exports = app

@@ -1,0 +1,25 @@
+h2{
+    font-size: 2vw;
+    color : white;
+}
+p{
+    font-size: 1vw;
+    font-family:'Times New Roman', Times, serif;
+}
+#ContenuContact{
+    width: 75%;
+    margin: 5% auto;
+}
+#ImgContact{
+    width: 60%;
+    float: left;
+}
+#TextContact{
+    float: right;
+    width: 25%;
+    margin: 7vw auto;
+    color: white;
+}
+#JoinDiscord{
+    width: 15%;
+}

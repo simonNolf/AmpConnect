@@ -3,36 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PresentationComponent } from './presentation/presentation.component';
-import { TutorialComponent } from './tutorial/tutorial.component';
-import { ContactComponent } from './contact/contact.component';
-import { AccueilComponent } from './accueil/accueil.component';
-
-import { Routes } from '@angular/router';
-
-import { RouterModule } from '@angular/router';
-
-
-const appRoutes: Routes = [
-  { path: '', component: AccueilComponent },
-  { path: 'presentation', component: PresentationComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'tuto', component: TutorialComponent }
-];
-
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './sharepage/footer/footer.component';
+import { NavbarComponent } from './sharepage/navbar/navbar.component';
+import { ProductComponent } from './pages/product/product.component';
+import { TeamComponent } from './pages/team/team.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PresentationComponent,
-    TutorialComponent,
+    AboutComponent,
     ContactComponent,
-    AccueilComponent
+    HomeComponent,
+    FooterComponent,
+    NavbarComponent,
+    ProductComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

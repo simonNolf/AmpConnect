@@ -19,6 +19,8 @@ export class SettingsMenuComponent implements OnInit {
   listGeneral = [] as any
   listYoutube = [] as any
 
+  generalInput = [] as any
+
   public nomApplication:string = ""
   public volumeApplication:Number = 0
 
@@ -42,7 +44,11 @@ export class SettingsMenuComponent implements OnInit {
 
 
 
-  onSubmitGeneral(form: NgForm) {
+  onSubmitGeneral(form: any) {
+    this.displayGeneralForm = false
+    return form;
+  }
+
 
     this.HttpService.addGeneralSettings(form.value).subscribe(data => {
         this.HttpService.getGeneralSettings().subscribe(data => {
@@ -52,11 +58,11 @@ export class SettingsMenuComponent implements OnInit {
       })
     })
     
-    
   }
 
   onGnForm() {
     this.displayGeneralForm = true
+
   }
 
 
