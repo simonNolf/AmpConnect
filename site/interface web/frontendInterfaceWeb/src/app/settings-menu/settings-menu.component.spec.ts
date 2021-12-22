@@ -42,11 +42,6 @@ describe('SettingsMenuComponent', () => {
         expect(displayGeneral).toBeFalsy();
     });
 
-    it(`should have as onGnForm is true when function is called`, () => {
-        fixture.onSubmitGeneral(testForm)
-        let displayYoutube = fixture.displayYoutubeForm
-        expect(displayYoutube).toBeFalsy();
-    });
 
     it(`should have as displayDabForm is false`, () => {
         let displayDab = fixture.displayDabForm

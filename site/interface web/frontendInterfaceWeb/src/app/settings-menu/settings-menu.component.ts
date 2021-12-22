@@ -11,10 +11,6 @@ import{FormControl,FormGroup,Validators}from '@angular/forms'
 })
 export class SettingsMenuComponent implements OnInit {
 
-  gnSettings=new FormGroup({
-        appName:new FormControl('',Validators.required),
-        volume:new FormControl('',Validators.required)
-  })
 
   public displayYoutubeForm: boolean = false;
   public displayGeneralForm: boolean = false;
