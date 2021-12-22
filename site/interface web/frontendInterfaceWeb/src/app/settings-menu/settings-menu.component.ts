@@ -3,7 +3,7 @@ import { waitForAsync } from '@angular/core/testing';
 
 import { NgForm } from '@angular/forms';
 import { SettingHttpService } from '../services/settings-http.service';
-
+import{FormControl,FormGroup,Validators}from '@angular/forms'
 @Component({
   selector: 'app-settings-menu',
   templateUrl: './settings-menu.component.html',
@@ -38,20 +38,13 @@ export class SettingsMenuComponent implements OnInit {
 
   }
 
-  public angelMowersPromise = new Promise<any>((resolve, reject) => {
+
+
+
     
-})
-
-
-
-  onSubmitGeneral(form: any) {
-    this.displayGeneralForm = false
-    return form;
-  }
 
 
   sendSubmitedGeneralData(form:NgForm){
-
     this.HttpService.addGeneralSettings(form.value).subscribe(data => {
         this.HttpService.getGeneralSettings().subscribe(data => {
         this.nomApplication= data.appName

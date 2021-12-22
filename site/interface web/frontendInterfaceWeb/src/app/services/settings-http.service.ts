@@ -19,7 +19,6 @@ export class SettingHttpService {
   }
 
   addGeneralSettings(generale: any):Observable<Generale> {
-    console.log(generale)
     return this.http.post<Generale>("/sendGeneralSettings", generale)
 
       
