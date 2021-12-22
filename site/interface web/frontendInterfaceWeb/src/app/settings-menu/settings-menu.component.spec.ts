@@ -36,11 +36,6 @@ describe('SettingsMenuComponent', () => {
         expect(displayYoutube).toBeFalsy();
     });
 
-    it(`should have as onYTForm is true when function is called`, () => {
-        fixture.onYtForm()
-        let displayYoutube = fixture.displayYoutubeForm
-        expect(displayYoutube).toBeTruthy();
-    });
 
     it(`should have as displayGeneralForm is false`, () => {
         let displayGeneral = fixture.displayGeneralForm
@@ -58,25 +53,12 @@ describe('SettingsMenuComponent', () => {
         expect(displayDab).toBeFalsy();
     });
 
-    it(`should have as onDabForm is true when function is called`, () => {
-        fixture.onSubmitDAB(testForm)
-        let displayYoutube = fixture.displayDabForm
-        expect(displayYoutube).toBeFalsy();
-    });
 
-    it(`should have as onAnnulerFormYtb is false when function is called`, () => {
-        let annulerYoutube = fixture.onAnnulerFormYtb()
-        expect(fixture.displayYoutubeForm).toBeFalsy();
-    });
 
     it(`should have as onAnnulerFormGeneral is false when function is called`, () => {
         let annulerGeneral = fixture.onAnnulerFormGeneral()
         expect(fixture.displayGeneralForm).toBeFalsy();
     });
 
-    it(`should have as onAnnulerFormDab is false when function is called`, () => {
-        let annulerDab = fixture.onAnnulerFormDab()
-        expect(fixture.displayDabForm).toBeFalsy();
-    });
 
 });
