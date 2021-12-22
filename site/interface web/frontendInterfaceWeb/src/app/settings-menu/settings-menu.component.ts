@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { waitForAsync } from '@angular/core/testing';
 
 import { NgForm } from '@angular/forms';
 import { SettingHttpService } from '../services/settings-http.service';
@@ -28,65 +29,40 @@ export class SettingsMenuComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.HttpService.getDabSettings().subscribe(data => {
-      this.listDab= data
-    })
-    this.HttpService.getYtbSettings().subscribe(data => {
-      this.listYoutube = data
-    })
     this.HttpService.getGeneralSettings().subscribe(data => {
-      this.nomApplication= data[0].appName
-      this.volumeApplication= data[0].volume
+      this.nomApplication= data.appName
+      this.volumeApplication= data.volume
     })
 
   }
-  
+
+  public angelMowersPromise = new Promise<any>((resolve, reject) => {
+    
+})
 
 
-  onSubmitDAB(form: NgForm) {
-    console.log(form.value);
-    this.displayDabForm = false
-
-  }
-
-
-  onSubmitYoutube(form: NgForm) {
-    console.log(form.value);
-    this.displayYoutubeForm = false
-  }
 
   onSubmitGeneral(form: NgForm) {
 
-    this.HttpService.addGeneralSettings(form.value).subscribe(test => {
-      console.log(test)
+    this.HttpService.addGeneralSettings(form.value).subscribe(data => {
+        this.HttpService.getGeneralSettings().subscribe(data => {
+        this.nomApplication= data.appName
+        this.volumeApplication= data.volume
+        this.displayGeneralForm = false
+      })
     })
-
-    this.displayGeneralForm = false
+    
+    
   }
 
   onGnForm() {
     this.displayGeneralForm = true
-    console.log(this.listGeneral[0].appName)
   }
 
-  onYtForm() {
-    this.displayYoutubeForm = true
-  }
 
-  onDabForm() {
-    this.displayDabForm = true
-
-  }
-
-  onAnnulerFormYtb() {
-    this.displayYoutubeForm = false
-  }
   onAnnulerFormGeneral() {
     this.displayGeneralForm = false
 
-  }
-  onAnnulerFormDab() {
-    this.displayDabForm = false
   }
 
 }
