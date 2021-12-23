@@ -12,11 +12,13 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - run: |
-       npm install -g @angular/cli
-      npm ci
-      npm run build
-      npm run test
-      npm publish --access public
-        env:
+      - name: Install dependencies + launch jest test
+        run: |
+        cd ${{ github.workspace}}/site/"interface web"/frontendInterfaceWeb
+          npm install -g @angular/cli
+          npm install
+          npm run test
+          npm publish --access public
+      - env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          
