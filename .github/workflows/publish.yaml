@@ -12,10 +12,11 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - run: cd ${{ github.workspace}}/site/"site vitrine"/Frontend
       - run: npm install -g @angular/cli
-      - run: npm install
-      - run: npm run build
+      - run: npm ci
+      - run: cd ${{ github.workspace}}/site/"site vitrine"/Frontend
+      npm run build
+      
       - run: npm run test
       - run: npm publish --access public
         env:
