@@ -47,18 +47,5 @@ export class HttpService {
   }
 
 
-  /**
-  * requête pour les formulaires de paramétrages de l'interface web
-  */
-
-   postYoutubeSettings():Observable<User[]>{
-
-    return this.http.get<User[]>("/youtubeSettings")
-  }
-
-  postDABSettings():Observable<User[]>{
-
-    return this.http.get<User[]>("/dabSettings")
-  }
 
 }

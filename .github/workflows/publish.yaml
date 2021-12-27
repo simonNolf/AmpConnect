@@ -1,0 +1,19 @@
+name: Publish
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+      - name: Install dependencies + launch jest test
+        run: |
+        ls ${{ github.workspace}}/site/"site vitrine"/Frontend
+        
+          

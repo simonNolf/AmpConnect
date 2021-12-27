@@ -1,8 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
-nav{
-    font-size: 20px;
+*{
+  padding: 0;
+  margin: 0;
 }
-
-nav span{
-    font-size: 20px !important;
+:root{
+  --primary-color: rgb(158, 4, 4);
+  --secondary-color:rgb(22, 34, 39);
+  --tertiary-color: hsl(344, 54%, 31%);
+  --quarternary-color: hsl(209, 55%, 37%);
+}
+body{
+  overflow-x: hidden;
+  height: 100vh;
+  font-family: Ariel, helvetica, sans-serifs;
+  background: linear-gradient(135deg, var(--tertiary-color), var(--quarternary-color));
 }
